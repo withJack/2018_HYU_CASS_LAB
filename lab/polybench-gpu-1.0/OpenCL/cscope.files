@@ -1,0 +1,16 @@
+./GRAMSCHM/gramschmidt.c
+./2MM/2mm.c
+./MVT/mvt.c
+./3DCONV/3DConvolution.c
+./GEMM/gemm.c
+./GESUMMV/gesummv.c
+./VECADD/VectorAdd.c
+./BICG/bicg.c
+./3MM/3mm.c
+./FDTD-2D/fdtd2d.c
+./SYR2K/syr2k.c
+./ATAX/atax.c
+./CORR/correlation.c
+./COVAR/covariance.c
+./2DCONV/2DConvolution.c
+./SYRK/syrk.c

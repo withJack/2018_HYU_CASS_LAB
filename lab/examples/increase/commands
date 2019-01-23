@@ -1,0 +1,5 @@
+source make_command
+/usr/local/llvm/bin/clang -c -emit-llvm -o test.bc test.c
+./increase test.bc
+/usr/local/llvm/bin/clang -o test  test.updated.bc
+./test

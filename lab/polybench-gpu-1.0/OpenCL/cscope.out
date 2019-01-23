@@ -1,0 +1,26503 @@
+cscope 15 $HOME/Documents/lab/polybench-gpu-1.0/OpenCL -q 0000000278 0000158578
+	@2DCONV/2DConvolution.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 1.05
+
+	)
+
+27 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+30 
+	#NI
+ 4096
+
+	)
+
+31 
+	#NJ
+ 4096
+
+	)
+
+34 
+	#DIM_LOCAL_WORK_GROUP_X
+ 32
+
+	)
+
+35 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 8
+
+	)
+
+37 #ià
+defšed
+(
+ş_khr_å64
+)
+
+38 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+39 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+40 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+44 
+	tDATA_TYPE
+;
+
+47 
+	g¡r_‹mp
+[1024];
+
+49 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+50 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+51 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+52 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+53 
+ş_št
+ 
+	g”rcode
+;
+
+54 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+55 
+ş_k”Ãl
+ 
+	gşK”Ãl
+;
+
+56 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+57 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+58 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+59 
+ş_mem
+ 
+	gb_mem_obj
+;
+
+60 
+ş_mem
+ 
+	gc_mem_obj
+;
+
+61 
+FILE
+ *
+	gå
+;
+
+62 *
+	gsourû_¡r
+;
+
+63 
+size_t
+ 
+	gsourû_size
+;
+
+67 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+B
+, DATA_TYPE* 
+B_ouutFromGpu
+)
+
+69 
+i
+, 
+j
+, 
+ç
+;
+
+70 
+ç
+ = 0;
+
+73 
+i
+=1; i < (
+NI
+-1); i++)
+
+75 
+j
+=1; j < (
+NJ
+-1); j++)
+
+77 ià(
+	`³rûÁDiff
+(
+B
+[
+i
+*
+NJ
+ + 
+j
+], 
+B_ouutFromGpu
+[i*NJ + j]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+79 
+ç
+++;
+
+85 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+87 
+	}
+}
+
+90 
+	$»ad_ş_fe
+()
+
+93 
+å
+ = 
+	`fİ’
+("2DConvolution.cl", "r");
+
+94 ià(!
+å
+) {
+
+95 
+	`årštf
+(
+¡dout
+, "Failedo†oad kernel.\n");
+
+96 
+	`ex™
+(1);
+
+98 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+99 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+100 
+	`fşo£
+Ğ
+å
+ );
+
+101 
+	}
+}
+
+104 
+	$š™
+(
+DATA_TYPE
+* 
+A
+)
+
+106 
+i
+, 
+j
+;
+
+108 
+i
+ = 0; i < 
+NI
+; ++i)
+
+110 
+j
+ = 0; j < 
+NJ
+; ++j)
+
+112 
+A
+[
+i
+*
+NJ
+ + 
+j
+] = ()
+	`¿nd
+()/
+RAND_MAX
+;
+
+115 
+	}
+}
+
+118 
+	$ş_š™Ÿliz©iÚ
+()
+
+122 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+123 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+124 
+	`´štf
+("Error getting…latform IDs\n");
+
+126 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+127 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+128 
+	`´štf
+("Error getting…latform‚ame\n");
+
+130 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+131 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+132 
+	`´štf
+("Error getting…latform version\n");
+
+134 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+135 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+136 
+	`´štf
+("Error getting device IDs\n");
+
+138 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+139 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+140 
+	`´štf
+("Error getting device‚ame\n");
+
+143 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+144 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+147 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+148 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+149 
+	}
+}
+
+152 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+A
+)
+
+154 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_ONLY
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+, 
+NULL
+, &
+”rcode
+);
+
+155 
+b_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+, 
+NULL
+, &
+”rcode
+);
+
+157 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+159 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+, 
+A
+, 0, 
+NULL
+, NULL);
+
+160 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+161 
+	}
+}
+
+164 
+	$ş_lßd_´og
+()
+
+167 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+169 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+172 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+173 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+176 
+şK”Ãl
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "CÚvŞutiÚ2D_k”Ãl", &
+”rcode
+);
+
+177 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+178 
+	`şFšish
+(
+şCommªdQue
+);
+
+179 
+	}
+}
+
+182 
+	$ş_Ïunch_k”Ãl
+()
+
+184 
+t_¡¬t
+, 
+t_’d
+;
+
+185 
+ni
+ = 
+NI
+;
+
+186 
+nj
+ = 
+NJ
+;
+
+188 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+189 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+190 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+191 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NI
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+192 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+NJ
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+194 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+197 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+198 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 1, (
+ş_mem
+), (*)&
+b_mem_obj
+);
+
+199 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 2, (), &
+ni
+);
+
+200 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 3, (), &
+nj
+);
+
+202 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+204 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+206 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+207 
+	`şFšish
+(
+şCommªdQue
+);
+
+208 
+t_’d
+ = 
+	`¹şock
+();
+
+209 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+210 
+	}
+}
+
+212 
+	$ş_ş—n_up
+()
+
+215 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+216 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+217 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl
+);
+
+218 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+219 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+220 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+b_mem_obj
+);
+
+221 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+222 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+223 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+224 
+	}
+}
+
+226 
+	$cÚv2D
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+)
+
+228 
+i
+, 
+j
+;
+
+229 
+DATA_TYPE
+ 
+c11
+, 
+c12
+, 
+c13
+, 
+c21
+, 
+c22
+, 
+c23
+, 
+c31
+, 
+c32
+, 
+c33
+;
+
+231 
+c11
+ = +0.2; 
+c21
+ = +0.5; 
+c31
+ = -0.8;
+
+232 
+c12
+ = -0.3; 
+c22
+ = +0.6; 
+c32
+ = -0.9;
+
+233 
+c13
+ = +0.4; 
+c23
+ = +0.7; 
+c33
+ = +0.10;
+
+236 
+i
+ = 1; i < 
+NI
+ - 1; ++i)
+
+238 
+j
+ = 1; j < 
+NJ
+ - 1; ++j)
+
+240 
+B
+[
+i
+*
+NJ
+ + 
+j
+] = 
+c11
+ * 
+A
+[(˜- 1)*NJ + (j - 1)] + 
+c12
+ * A[(˜+ 0)*NJ + (j - 1)] + 
+c13
+ * A[(i + 1)*NJ + (j - 1)]
+
+241 + 
+c21
+ * 
+A
+[(
+i
+ - 1)*
+NJ
+ + (
+j
+ + 0)] + 
+c22
+ * A[(˜+ 0)*NJ + (j + 0)] + 
+c23
+ * A[(i + 1)*NJ + (j + 0)]
+
+242 + 
+c31
+ * 
+A
+[(
+i
+ - 1)*
+NJ
+ + (
+j
+ + 1)] + 
+c32
+ * A[(˜+ 0)*NJ + (j + 1)] + 
+c33
+ * A[(i + 1)*NJ + (j + 1)];
+
+245 
+	}
+}
+
+248 
+	$maš
+(
+¬gc
+, *
+¬gv
+[])
+
+250 
+t_¡¬t
+, 
+t_’d
+;
+
+251 
+i
+;
+
+253 
+DATA_TYPE
+* 
+A
+;
+
+254 
+DATA_TYPE
+* 
+B
+;
+
+255 
+DATA_TYPE
+* 
+B_ouutFromGpu
+;
+
+257 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NJ
+*(DATA_TYPE));
+
+258 
+B
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NJ
+*(DATA_TYPE));
+
+259 
+B_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NJ
+*(DATA_TYPE));
+
+261 
+	`š™
+(
+A
+);
+
+263 
+	`»ad_ş_fe
+();
+
+264 
+	`ş_š™Ÿliz©iÚ
+();
+
+265 
+	`ş_mem_š™
+(
+A
+);
+
+266 
+	`ş_lßd_´og
+();
+
+268 
+	`ş_Ïunch_k”Ãl
+();
+
+270 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+b_mem_obj
+, 
+CL_TRUE
+, 0, 
+NI
+*
+NJ
+*(
+DATA_TYPE
+), 
+B_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+271 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+273 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+274 
+	`cÚv2D
+(
+A
+, 
+B
+);
+
+275 
+t_’d
+ = 
+	`¹şock
+();
+
+276 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+277 
+	`com·»ResuÉs
+(
+B
+, 
+B_ouutFromGpu
+);
+
+279 
+	`ä“
+(
+A
+);
+
+280 
+	`ä“
+(
+B
+);
+
+281 
+	`ä“
+(
+B_ouutFromGpu
+);
+
+283 
+	`ş_ş—n_up
+();
+
+285 
+	}
+}
+
+	@2MM/2mm.c
+
+11 
+	~<¡dio.h
+>
+
+12 
+	~<¡dlib.h
+>
+
+13 
+	~<time.h
+>
+
+14 
+	~<sys/time.h
+>
+
+15 
+	~<m©h.h
+>
+
+17 #ifdeà
+__APPLE__
+
+
+18 
+	~<O³nCL/İ’ş.h
+>
+
+20 
+	~<CL/ş.h
+>
+
+23 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+26 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 1.05
+
+	)
+
+28 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+31 
+	#NI
+ 2048
+
+	)
+
+32 
+	#NJ
+ 2048
+
+	)
+
+33 
+	#NK
+ 2048
+
+	)
+
+34 
+	#NL
+ 2048
+
+	)
+
+37 
+	#DIM_LOCAL_WORK_GROUP_X
+ 32
+
+	)
+
+38 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 8
+
+	)
+
+41 #ià
+defšed
+(
+ş_khr_å64
+)
+
+42 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+43 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+44 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+48 
+	tDATA_TYPE
+;
+
+50 
+	g¡r_‹mp
+[1024];
+
+52 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+53 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+54 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+55 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+56 
+ş_št
+ 
+	g”rcode
+;
+
+57 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+58 
+ş_k”Ãl
+ 
+	gşK”Ãl1
+;
+
+59 
+ş_k”Ãl
+ 
+	gşK”Ãl2
+;
+
+60 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+61 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+62 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+63 
+ş_mem
+ 
+	gb_mem_obj
+;
+
+64 
+ş_mem
+ 
+	gc_mem_obj
+;
+
+65 
+ş_mem
+ 
+	gd_mem_obj
+;
+
+66 
+ş_mem
+ 
+	ge_mem_obj
+;
+
+68 
+FILE
+ *
+	gå
+;
+
+69 *
+	gsourû_¡r
+;
+
+70 
+size_t
+ 
+	gsourû_size
+;
+
+74 
+	$com·»ResuÉs
+(
+DATA_TYPE
+ *
+E
+, DATA_TYPE *
+E_ouutFromGpu
+)
+
+76 
+i
+,
+j
+,
+ç
+;
+
+77 
+ç
+ = 0;
+
+79 
+i
+=0; i < 
+NL
+; i++)
+
+81 
+j
+=0; j < 
+NI
+; j++)
+
+83 ià(
+	`³rûÁDiff
+(
+E
+[
+i
+*
+NI
+ + 
+j
+], 
+E_ouutFromGpu
+[i*NI + j]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+85 
+ç
+++;
+
+91 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+93 
+	}
+}
+
+96 
+	$»ad_ş_fe
+()
+
+99 
+å
+ = 
+	`fİ’
+("2mm.cl", "r");
+
+100 ià(!
+å
+) {
+
+101 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+102 
+	`ex™
+(1);
+
+104 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+105 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+106 
+	`fşo£
+Ğ
+å
+ );
+
+107 
+	}
+}
+
+110 
+	$š™_¬¿y
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+, DATA_TYPE* 
+C
+, DATA_TYPE* 
+D
+)
+
+112 
+i
+, 
+j
+;
+
+114 
+i
+ = 0; i < 
+NI
+; i++)
+
+116 
+j
+ = 0; j < 
+NK
+; j++)
+
+118 
+A
+[
+i
+*
+NI
+ + 
+j
+] = ((
+DATA_TYPE
+) i*j) / NI;
+
+122 
+i
+ = 0; i < 
+NK
+; i++)
+
+124 
+j
+ = 0; j < 
+NJ
+; j++)
+
+126 
+B
+[
+i
+*
+NK
+ + 
+j
+] = ((
+DATA_TYPE
+èi*(j+1)è/ 
+NJ
+;
+
+130 
+i
+ = 0; i < 
+NL
+; i++)
+
+132 
+j
+ = 0; j < 
+NJ
+; j++)
+
+134 
+C
+[
+i
+*
+NL
+ + 
+j
+] = ((
+DATA_TYPE
+) i*(j+3)) / NL;
+
+138 
+i
+ = 0; i < 
+NI
+; i++)
+
+140 
+j
+ = 0; j < 
+NL
+; j++)
+
+142 
+D
+[
+i
+*
+NL
+ + 
+j
+] = ((
+DATA_TYPE
+èi*(j+2)è/ 
+NK
+;
+
+145 
+	}
+}
+
+148 
+	$ş_š™Ÿliz©iÚ
+()
+
+151 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+152 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+153 
+	`´štf
+("Error getting…latform IDs\n");
+
+155 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+156 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+157 
+	`´štf
+("Error getting…latform‚ame\n");
+
+159 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+160 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+161 
+	`´štf
+("Error getting…latform version\n");
+
+163 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+164 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+165 
+	`´štf
+("Error getting device IDs\n");
+
+167 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+168 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+169 
+	`´štf
+("Error getting device‚ame\n");
+
+172 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+173 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+176 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+177 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+178 
+	}
+}
+
+181 
+	$ş_mem_š™
+(
+DATA_TYPE
+ *
+A
+, DATA_TYPE *
+B
+, DATA_TYPE *
+C
+, DATA_TYPE *
+D
+, DATA_TYPE *
+E
+)
+
+183 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_ONLY
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NK
+, 
+NULL
+, &
+”rcode
+);
+
+184 
+b_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_ONLY
+, (
+DATA_TYPE
+è* 
+NK
+ * 
+NJ
+, 
+NULL
+, &
+”rcode
+);
+
+185 
+c_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+, 
+NULL
+, &
+”rcode
+);
+
+186 
+d_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NJ
+ * 
+NL
+, 
+NULL
+, &
+”rcode
+);
+
+187 
+e_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NL
+, 
+NULL
+, &
+”rcode
+);
+
+189 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+191 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NK
+, 
+A
+, 0, 
+NULL
+, NULL);
+
+192 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+b_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NK
+ * 
+NJ
+, 
+B
+, 0, 
+NULL
+, NULL);
+
+193 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+c_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+, 
+C
+, 0, 
+NULL
+, NULL);
+
+194 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+d_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NJ
+ * 
+NL
+, 
+D
+, 0, 
+NULL
+, NULL);
+
+195 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+e_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NL
+, 
+E
+, 0, 
+NULL
+, NULL);
+
+196 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+197 
+	}
+}
+
+200 
+	$ş_lßd_´og
+()
+
+203 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+205 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+208 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+209 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+212 
+şK”Ãl1
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "mm2_k”Ãl1", &
+”rcode
+);
+
+213 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+215 
+şK”Ãl2
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "mm2_k”Ãl2", &
+”rcode
+);
+
+216 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+217 
+	`şFšish
+(
+şCommªdQue
+);
+
+218 
+	}
+}
+
+221 
+	$ş_Ïunch_k”Ãl
+()
+
+223 
+t_¡¬t
+, 
+t_’d
+;
+
+225 
+ni
+=
+NI
+;
+
+226 
+nj
+=
+NJ
+;
+
+227 
+nk
+=
+NK
+;
+
+228 
+Æ
+=
+NL
+;
+
+230 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+231 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+232 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+233 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NI
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+234 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+NL
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+236 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+239 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+240 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 1, (
+ş_mem
+), (*)&
+b_mem_obj
+);
+
+241 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 2, (
+ş_mem
+), (*)&
+c_mem_obj
+);
+
+242 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 3, (), (*)&
+ni
+);
+
+243 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 4, (), (*)&
+nk
+);
+
+244 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 5, (), (*)&
+nj
+);
+
+245 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+247 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl1
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+248 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+249 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+251 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NI
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+252 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+NL
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+254 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 0, (
+ş_mem
+), (*)&
+c_mem_obj
+);
+
+255 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 1, (
+ş_mem
+), (*)&
+d_mem_obj
+);
+
+256 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 2, (
+ş_mem
+), (*)&
+e_mem_obj
+);
+
+257 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 3, (), (*)&
+ni
+);
+
+258 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 4, (), (*)&
+nj
+);
+
+259 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 5, (), (*)&
+Æ
+);
+
+260 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+263 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl2
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+264 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+265 
+	`şFšish
+(
+şCommªdQue
+);
+
+267 
+t_’d
+ = 
+	`¹şock
+();
+
+268 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+269 
+	}
+}
+
+272 
+	$ş_ş—n_up
+()
+
+275 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+276 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+277 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl1
+);
+
+278 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl2
+);
+
+279 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+280 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+281 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+b_mem_obj
+);
+
+282 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+c_mem_obj
+);
+
+283 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+d_mem_obj
+);
+
+284 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+e_mem_obj
+);
+
+285 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+286 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+287 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+288 
+	}
+}
+
+291 
+	$mm2_ıu
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+, DATA_TYPE* 
+C
+, DATA_TYPE* 
+D
+, DATA_TYPE* 
+E
+)
+
+293 
+i
+, 
+j
+, 
+k
+;
+
+295 
+i
+ = 0; i < 
+NI
+; i++)
+
+297 
+j
+ = 0; j < 
+NJ
+; j++)
+
+299 
+k
+ = 0; k < 
+NK
+; ++k)
+
+301 
+C
+[
+i
+*
+NJ
+ + 
+j
+] +ğ
+A
+[i*
+NK
+ + 
+k
+] * 
+B
+[k*NJ + j];
+
+306 
+i
+ = 0; i < 
+NI
+; i++)
+
+308 
+j
+ = 0; j < 
+NL
+; j++)
+
+310 
+k
+ = 0; k < 
+NJ
+; ++k)
+
+312 
+E
+[
+i
+*
+NL
+ + 
+j
+] +ğ
+C
+[i*
+NJ
+ + 
+k
+] * 
+D
+[k*NL + j];
+
+316 
+	}
+}
+
+319 
+	$maš
+()
+
+321 
+t_¡¬t
+, 
+t_’d
+;
+
+323 
+DATA_TYPE
+* 
+C
+;
+
+324 
+DATA_TYPE
+* 
+A
+;
+
+325 
+DATA_TYPE
+* 
+B
+;
+
+326 
+DATA_TYPE
+* 
+D
+;
+
+327 
+DATA_TYPE
+* 
+E
+;
+
+328 
+DATA_TYPE
+* 
+E_ouutFromGpu
+;
+
+330 
+C
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NJ
+*(DATA_TYPE));
+
+331 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NK
+*(DATA_TYPE));
+
+332 
+B
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NK
+*
+NJ
+*(DATA_TYPE));
+
+333 
+D
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NJ
+*
+NL
+*(DATA_TYPE));
+
+334 
+E
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NL
+*(DATA_TYPE));
+
+335 
+E_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NL
+*(DATA_TYPE));
+
+337 
+i
+;
+
+338 
+	`š™_¬¿y
+(
+A
+, 
+B
+, 
+C
+, 
+D
+);
+
+339 
+	`»ad_ş_fe
+();
+
+340 
+	`ş_š™Ÿliz©iÚ
+();
+
+341 
+	`ş_mem_š™
+(
+A
+, 
+B
+, 
+C
+, 
+D
+, 
+E
+);
+
+342 
+	`ş_lßd_´og
+();
+
+344 
+	`ş_Ïunch_k”Ãl
+();
+
+346 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+e_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NL
+, 
+E_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+347 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+349 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+350 
+	`mm2_ıu
+(
+A
+, 
+B
+, 
+C
+, 
+D
+, 
+E
+);
+
+351 
+t_’d
+ = 
+	`¹şock
+();
+
+352 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+353 
+	`com·»ResuÉs
+(
+E
+, 
+E_ouutFromGpu
+);
+
+354 
+	`ş_ş—n_up
+();
+
+356 
+	`ä“
+(
+C
+);
+
+357 
+	`ä“
+(
+A
+);
+
+358 
+	`ä“
+(
+B
+);
+
+359 
+	`ä“
+(
+D
+);
+
+360 
+	`ä“
+(
+E
+);
+
+361 
+	`ä“
+(
+E_ouutFromGpu
+);
+
+364 
+	}
+}
+
+	@3DCONV/3DConvolution.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 1.05
+
+	)
+
+27 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+30 
+	#NI
+ 256
+
+	)
+
+31 
+	#NJ
+ 256
+
+	)
+
+32 
+	#NK
+ 256
+
+	)
+
+35 
+	#DIM_LOCAL_WORK_GROUP_X
+ 32
+
+	)
+
+36 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 8
+
+	)
+
+38 #ià
+defšed
+(
+ş_khr_å64
+)
+
+39 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+40 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+41 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+45 
+	tDATA_TYPE
+;
+
+48 
+	g¡r_‹mp
+[1024];
+
+51 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+52 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+53 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+54 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+55 
+ş_št
+ 
+	g”rcode
+;
+
+56 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+57 
+ş_k”Ãl
+ 
+	gşK”Ãl
+;
+
+58 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+59 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+60 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+61 
+ş_mem
+ 
+	gb_mem_obj
+;
+
+62 
+FILE
+ *
+	gå
+;
+
+63 *
+	gsourû_¡r
+;
+
+64 
+size_t
+ 
+	gsourû_size
+;
+
+68 
+	$»ad_ş_fe
+()
+
+71 
+å
+ = 
+	`fİ’
+("3DConvolution.cl", "r");
+
+72 ià(!
+å
+) {
+
+73 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+74 
+	`ex™
+(1);
+
+76 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+77 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+78 
+	`fşo£
+Ğ
+å
+ );
+
+79 
+	}
+}
+
+82 
+	$š™
+(
+DATA_TYPE
+* 
+A
+)
+
+84 
+i
+, 
+j
+, 
+k
+;
+
+86 
+i
+ = 0; i < 
+NI
+; ++i)
+
+88 
+j
+ = 0; j < 
+NJ
+; ++j)
+
+90 
+k
+ = 0; k < 
+NK
+; ++k)
+
+92 
+A
+[
+i
+*(
+NK
+ * 
+NJ
+è+ 
+j
+*NK + 
+k
+] = i % 12 + 2 * (j % 7) + 3 * (k % 13);
+
+96 
+	}
+}
+
+99 
+	$ş_š™Ÿliz©iÚ
+()
+
+102 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+103 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+104 
+	`´štf
+("Error getting…latform IDs\n");
+
+106 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+107 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+108 
+	`´štf
+("Error getting…latform‚ame\n");
+
+110 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+111 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+112 
+	`´štf
+("Error getting…latform version\n");
+
+114 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+115 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+116 
+	`´štf
+("Error getting device IDs\n");
+
+118 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+119 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+120 
+	`´štf
+("Error getting device‚ame\n");
+
+123 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+124 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+127 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+128 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+129 
+	}
+}
+
+132 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+)
+
+134 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_ONLY
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+ * 
+NK
+, 
+NULL
+, &
+”rcode
+);
+
+135 
+b_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+ * 
+NK
+, 
+NULL
+, &
+”rcode
+);
+
+137 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+139 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+ * 
+NK
+, 
+A
+, 0, 
+NULL
+, NULL);
+
+140 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+b_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+ * 
+NK
+, 
+B
+, 0, 
+NULL
+, NULL);
+
+141 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+142 
+	}
+}
+
+145 
+	$ş_lßd_´og
+()
+
+148 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+150 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+153 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+154 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+157 
+şK”Ãl
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "CÚvŞutiÚ3D_k”Ãl", &
+”rcode
+);
+
+158 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+159 
+	`şFšish
+(
+şCommªdQue
+);
+
+160 
+	}
+}
+
+163 
+	$ş_Ïunch_k”Ãl
+()
+
+165 
+t_¡¬t
+, 
+t_’d
+;
+
+167 
+ni
+ = 
+NI
+;
+
+168 
+nj
+ = 
+NJ
+;
+
+169 
+nk
+ = 
+NK
+;
+
+171 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+172 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+173 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+174 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NK
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+175 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+NJ
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+177 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+180 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+181 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 1, (
+ş_mem
+), (*)&
+b_mem_obj
+);
+
+182 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 2, (), &
+ni
+);
+
+183 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 3, (), &
+nj
+);
+
+184 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 4, (), &
+nk
+);
+
+185 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+187 
+i
+;
+
+188 
+i
+ = 1; i < 
+NI
+ - 1; ++i)
+
+191 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 5, (), &
+i
+);
+
+194 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+197 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+198 
+	`şFšish
+(
+şCommªdQue
+);
+
+200 
+t_’d
+ = 
+	`¹şock
+();
+
+201 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+202 
+	}
+}
+
+205 
+	$ş_ş—n_up
+()
+
+208 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+209 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+210 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl
+);
+
+211 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+212 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+213 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+b_mem_obj
+);
+
+214 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+215 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+216 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+217 
+	}
+}
+
+220 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+B
+, DATA_TYPE* 
+B_ouutFromGpu
+)
+
+222 
+i
+, 
+j
+, 
+k
+, 
+ç
+;
+
+223 
+ç
+ = 0;
+
+226 
+i
+ = 1; i < 
+NI
+ - 1; ++i)
+
+228 
+j
+ = 1; j < 
+NJ
+ - 1; ++j)
+
+230 
+k
+ = 1; k < 
+NK
+ - 1; ++k)
+
+232 ià(
+	`³rûÁDiff
+(
+B
+[
+i
+*(
+NK
+ * 
+NJ
+è+ 
+j
+*NK + 
+k
+], 
+B_ouutFromGpu
+[i*(NK * NJè+ j*NK + k]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+234 
+ç
+++;
+
+241 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+243 
+	}
+}
+
+246 
+	$cÚv3D
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+)
+
+248 
+i
+, 
+j
+, 
+k
+;
+
+249 
+DATA_TYPE
+ 
+c11
+, 
+c12
+, 
+c13
+, 
+c21
+, 
+c22
+, 
+c23
+, 
+c31
+, 
+c32
+, 
+c33
+;
+
+251 
+c11
+ = +2; 
+c21
+ = +5; 
+c31
+ = -8;
+
+252 
+c12
+ = -3; 
+c22
+ = +6; 
+c32
+ = -9;
+
+253 
+c13
+ = +4; 
+c23
+ = +7; 
+c33
+ = +10;
+
+255 
+i
+ = 1; i < 
+NI
+ - 1; ++i)
+
+257 
+j
+ = 1; j < 
+NJ
+ - 1; ++j)
+
+259 
+k
+ = 1; k < 
+NK
+ -1; ++k)
+
+262 
+B
+[
+i
+*(
+NK
+ * 
+NJ
+è+ 
+j
+*NK + 
+k
+] = 
+c11
+ * 
+A
+[(˜- 1)*(NK * NJè+ (j - 1)*NK + (k - 1)] + 
+c13
+ * A[(i + 1)*(NK * NJ) + (j - 1)*NK + (k - 1)]
+
+263 + 
+c21
+ * 
+A
+[(
+i
+ - 1)*(
+NK
+ * 
+NJ
+è+ (
+j
+ - 1)*NK + (
+k
+ - 1)] + 
+c23
+ * A[(i + 1)*(NK * NJ) + (j - 1)*NK + (k - 1)]
+
+264 + 
+c31
+ * 
+A
+[(
+i
+ - 1)*(
+NK
+ * 
+NJ
+è+ (
+j
+ - 1)*NK + (
+k
+ - 1)] + 
+c33
+ * A[(i + 1)*(NK * NJ) + (j - 1)*NK + (k - 1)]
+
+265 + 
+c12
+ * 
+A
+[(
+i
+ + 0)*(
+NK
+ * 
+NJ
+è+ (
+j
+ - 1)*NK + (
+k
+ + 0)] + 
+c22
+ * A[(i + 0)*(NK * NJ) + (j + 0)*NK + (k + 0)]
+
+266 + 
+c32
+ * 
+A
+[(
+i
+ + 0)*(
+NK
+ * 
+NJ
+è+ (
+j
+ + 1)*NK + (
+k
+ + 0)] + 
+c11
+ * A[(i - 1)*(NK * NJ) + (j - 1)*NK + (k + 1)]
+
+267 + 
+c13
+ * 
+A
+[(
+i
+ + 1)*(
+NK
+ * 
+NJ
+è+ (
+j
+ - 1)*NK + (
+k
+ + 1)] + 
+c21
+ * A[(i - 1)*(NK * NJ) + (j + 0)*NK + (k + 1)]
+
+268 + 
+c23
+ * 
+A
+[(
+i
+ + 1)*(
+NK
+ * 
+NJ
+è+ (
+j
+ + 0)*NK + (
+k
+ + 1)] + 
+c31
+ * A[(i - 1)*(NK * NJ) + (j + 1)*NK + (k + 1)]
+
+269 + 
+c33
+ * 
+A
+[(
+i
+ + 1)*(
+NK
+ * 
+NJ
+è+ (
+j
+ + 1)*NK + (
+k
+ + 1)];
+
+273 
+	}
+}
+
+276 
+	$maš
+()
+
+278 
+t_¡¬t
+, 
+t_’d
+;
+
+280 
+DATA_TYPE
+* 
+A
+;
+
+281 
+DATA_TYPE
+* 
+B
+;
+
+282 
+DATA_TYPE
+* 
+B_ouutFromGpu
+;
+
+284 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NJ
+*
+NK
+*(DATA_TYPE));
+
+285 
+B
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NJ
+*
+NK
+*(DATA_TYPE));
+
+286 
+B_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NJ
+*
+NK
+*(DATA_TYPE));
+
+288 
+i
+;
+
+289 
+	`š™
+(
+A
+);
+
+290 
+	`»ad_ş_fe
+();
+
+291 
+	`ş_š™Ÿliz©iÚ
+();
+
+292 
+	`ş_mem_š™
+(
+A
+, 
+B
+);
+
+293 
+	`ş_lßd_´og
+();
+
+295 
+	`ş_Ïunch_k”Ãl
+();
+
+297 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+b_mem_obj
+, 
+CL_TRUE
+, 0, 
+NI
+ * 
+NJ
+ * 
+NK
+ * (
+DATA_TYPE
+), 
+B_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+298 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+300 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+301 
+	`cÚv3D
+(
+A
+, 
+B
+);
+
+302 
+t_’d
+ = 
+	`¹şock
+();
+
+303 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+304 
+	`com·»ResuÉs
+(
+B
+, 
+B_ouutFromGpu
+);
+
+305 
+	`ş_ş—n_up
+();
+
+307 
+	`ä“
+(
+A
+);
+
+308 
+	`ä“
+(
+B
+);
+
+309 
+	`ä“
+(
+B_ouutFromGpu
+);
+
+312 
+	}
+}
+
+	@3MM/3mm.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 0.05
+
+	)
+
+27 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+30 
+	#NI
+ 512
+
+	)
+
+31 
+	#NJ
+ 512
+
+	)
+
+32 
+	#NK
+ 512
+
+	)
+
+33 
+	#NL
+ 512
+
+	)
+
+34 
+	#NM
+ 512
+
+	)
+
+37 
+	#DIM_LOCAL_WORK_GROUP_X
+ 32
+
+	)
+
+38 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 8
+
+	)
+
+40 #ià
+defšed
+(
+ş_khr_å64
+)
+
+41 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+42 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+43 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+46 
+	tDATA_TYPE
+;
+
+49 
+	g¡r_‹mp
+[1024];
+
+51 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+52 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+53 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+54 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+55 
+ş_št
+ 
+	g”rcode
+;
+
+56 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+57 
+ş_k”Ãl
+ 
+	gşK”Ãl1
+;
+
+58 
+ş_k”Ãl
+ 
+	gşK”Ãl2
+;
+
+59 
+ş_k”Ãl
+ 
+	gşK”Ãl3
+;
+
+60 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+61 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+62 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+63 
+ş_mem
+ 
+	gb_mem_obj
+;
+
+64 
+ş_mem
+ 
+	gc_mem_obj
+;
+
+65 
+ş_mem
+ 
+	gd_mem_obj
+;
+
+66 
+ş_mem
+ 
+	ge_mem_obj
+;
+
+67 
+ş_mem
+ 
+	gf_mem_obj
+;
+
+68 
+ş_mem
+ 
+	gg_mem_obj
+;
+
+70 
+FILE
+ *
+	gå
+;
+
+71 *
+	gsourû_¡r
+;
+
+72 
+size_t
+ 
+	gsourû_size
+;
+
+77 
+	$com·»ResuÉs
+(
+DATA_TYPE
+ *
+G
+, DATA_TYPE *
+G_ouutFromGpu
+)
+
+79 
+i
+,
+j
+,
+ç
+;
+
+80 
+ç
+ = 0;
+
+82 
+i
+=0; i < 
+NI
+; i++)
+
+84 
+j
+=0; j < 
+NL
+; j++)
+
+86 ià(
+	`³rûÁDiff
+(
+G
+[
+i
+*
+NL
+ + 
+j
+], 
+G_ouutFromGpu
+[i*NL + j]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+88 
+ç
+++;
+
+94 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+96 
+	}
+}
+
+98 
+	$»ad_ş_fe
+()
+
+101 
+å
+ = 
+	`fİ’
+("3mm.cl", "r");
+
+102 ià(!
+å
+) {
+
+103 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+104 
+	`ex™
+(1);
+
+106 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+107 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+108 
+	`fşo£
+Ğ
+å
+ );
+
+109 
+	}
+}
+
+111 
+	$š™_¬¿y
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+, DATA_TYPE* 
+C
+, DATA_TYPE* 
+D
+)
+
+113 
+i
+, 
+j
+;
+
+115 
+i
+ = 0; i < 
+NI
+; i++)
+
+117 
+j
+ = 0; j < 
+NK
+; j++)
+
+119 
+A
+[
+i
+*
+NK
+ + 
+j
+] = ((
+DATA_TYPE
+èi*jè/ 
+NI
+;
+
+123 
+i
+ = 0; i < 
+NK
+; i++)
+
+125 
+j
+ = 0; j < 
+NJ
+; j++)
+
+127 
+B
+[
+i
+*
+NJ
+ + 
+j
+] = ((
+DATA_TYPE
+) i*(j+1)) / NJ;
+
+131 
+i
+ = 0; i < 
+NJ
+; i++)
+
+133 
+j
+ = 0; j < 
+NM
+; j++)
+
+135 
+C
+[
+i
+*
+NM
+ + 
+j
+] = ((
+DATA_TYPE
+èi*(j+3)è/ 
+NL
+;
+
+139 
+i
+ = 0; i < 
+NM
+; i++)
+
+141 
+j
+ = 0; j < 
+NL
+; j++)
+
+143 
+D
+[
+i
+*
+NL
+ + 
+j
+] = ((
+DATA_TYPE
+èi*(j+2)è/ 
+NK
+;
+
+146 
+	}
+}
+
+149 
+	$ş_š™Ÿliz©iÚ
+()
+
+152 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+153 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+154 
+	`´štf
+("Error getting…latform IDs\n");
+
+156 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+157 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+158 
+	`´štf
+("Error getting…latform‚ame\n");
+
+160 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+161 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+162 
+	`´štf
+("Error getting…latform version\n");
+
+164 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+165 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+166 
+	`´štf
+("Error getting device IDs\n");
+
+168 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+169 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+170 
+	`´štf
+("Error getting device‚ame\n");
+
+173 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+174 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+177 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+178 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+179 
+	}
+}
+
+182 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+, DATA_TYPE* 
+C
+, DATA_TYPE* 
+D
+, DATA_TYPE* 
+E
+, DATA_TYPE* 
+F
+, DATA_TYPE* 
+G
+)
+
+184 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_ONLY
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NK
+, 
+NULL
+, &
+”rcode
+);
+
+185 
+b_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_ONLY
+, (
+DATA_TYPE
+è* 
+NK
+ * 
+NJ
+, 
+NULL
+, &
+”rcode
+);
+
+186 
+c_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NJ
+ * 
+NM
+, 
+NULL
+, &
+”rcode
+);
+
+187 
+d_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NM
+ * 
+NL
+, 
+NULL
+, &
+”rcode
+);
+
+188 
+e_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+, 
+NULL
+, &
+”rcode
+);
+
+189 
+f_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NJ
+ * 
+NL
+, 
+NULL
+, &
+”rcode
+);
+
+190 
+g_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NL
+, 
+NULL
+, &
+”rcode
+);
+
+192 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+194 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NK
+, 
+A
+, 0, 
+NULL
+, NULL);
+
+195 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+b_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NK
+ * 
+NJ
+, 
+B
+, 0, 
+NULL
+, NULL);
+
+196 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+c_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NJ
+ * 
+NM
+, 
+C
+, 0, 
+NULL
+, NULL);
+
+197 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+d_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NM
+ * 
+NL
+, 
+D
+, 0, 
+NULL
+, NULL);
+
+198 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+e_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+, 
+E
+, 0, 
+NULL
+, NULL);
+
+199 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+f_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NJ
+ * 
+NL
+, 
+F
+, 0, 
+NULL
+, NULL);
+
+200 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+g_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NL
+, 
+G
+, 0, 
+NULL
+, NULL);
+
+201 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+202 
+	}
+}
+
+204 
+	$ş_lßd_´og
+()
+
+207 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+209 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+212 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+213 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+216 
+şK”Ãl1
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "mm3_k”Ãl1", &
+”rcode
+);
+
+217 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+218 
+şK”Ãl2
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "mm3_k”Ãl2", &
+”rcode
+);
+
+219 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+220 
+şK”Ãl3
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "mm3_k”Ãl3", &
+”rcode
+);
+
+221 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+222 
+	`şFšish
+(
+şCommªdQue
+);
+
+223 
+	}
+}
+
+225 
+	$ş_Ïunch_k”Ãl
+()
+
+227 
+t_¡¬t
+, 
+t_’d
+;
+
+229 
+ni
+ = 
+NI
+;
+
+230 
+nj
+ = 
+NJ
+;
+
+231 
+nk
+ = 
+NK
+;
+
+232 
+Æ
+ = 
+NL
+;
+
+233 
+nm
+ = 
+NM
+;
+
+235 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+236 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+237 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+238 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NJ
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+239 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+NI
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+241 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+244 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+245 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 1, (
+ş_mem
+), (*)&
+b_mem_obj
+);
+
+246 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 2, (
+ş_mem
+), (*)&
+e_mem_obj
+);
+
+247 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 3, (), (*)&
+ni
+);
+
+248 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 4, (), (*)&
+nj
+);
+
+249 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 5, (), (*)&
+nk
+);
+
+250 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+253 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl1
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+254 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+255 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+257 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NL
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+258 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+NJ
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+260 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 0, (
+ş_mem
+), (*)&
+c_mem_obj
+);
+
+261 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 1, (
+ş_mem
+), (*)&
+d_mem_obj
+);
+
+262 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 2, (
+ş_mem
+), (*)&
+f_mem_obj
+);
+
+263 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 3, (), (*)&
+nj
+);
+
+264 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 4, (), (*)&
+Æ
+);
+
+265 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 5, (), (*)&
+nm
+);
+
+266 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+268 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl2
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+269 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+270 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+272 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NL
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+273 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+NI
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+275 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 0, (
+ş_mem
+), (*)&
+e_mem_obj
+);
+
+276 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 1, (
+ş_mem
+), (*)&
+f_mem_obj
+);
+
+277 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 2, (
+ş_mem
+), (*)&
+g_mem_obj
+);
+
+278 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 3, (), (*)&
+ni
+);
+
+279 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 4, (), (*)&
+Æ
+);
+
+280 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 5, (), (*)&
+nj
+);
+
+281 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+283 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl3
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+284 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+285 
+	`şFšish
+(
+şCommªdQue
+);
+
+287 
+t_’d
+ = 
+	`¹şock
+();
+
+288 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+289 
+	}
+}
+
+291 
+	$ş_ş—n_up
+()
+
+294 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+295 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+296 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl1
+);
+
+297 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl2
+);
+
+298 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl3
+);
+
+299 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+300 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+301 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+b_mem_obj
+);
+
+302 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+c_mem_obj
+);
+
+303 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+d_mem_obj
+);
+
+304 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+e_mem_obj
+);
+
+305 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+f_mem_obj
+);
+
+306 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+g_mem_obj
+);
+
+307 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+308 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+309 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+310 
+	}
+}
+
+313 
+	$mm3_ıu
+(
+DATA_TYPE
+ *
+A
+, DATA_TYPE *
+B
+, DATA_TYPE *
+C
+, DATA_TYPE *
+D
+, DATA_TYPE *
+E
+, DATA_TYPE *
+F
+, DATA_TYPE *
+G
+)
+
+315 
+i
+,
+j
+,
+k
+;
+
+318 
+i
+ = 0; i < 
+NI
+; i++)
+
+320 
+j
+ = 0; j < 
+NJ
+; j++)
+
+322 
+E
+[
+i
+*
+NJ
+ + 
+j
+] = 0;
+
+323 
+k
+ = 0; k < 
+NK
+; ++k)
+
+325 
+E
+[
+i
+*
+NJ
+ + 
+j
+] +ğ
+A
+[i*
+NK
+ + 
+k
+] * 
+B
+[k*NJ + j];
+
+331 
+i
+ = 0; i < 
+NI
+; i++)
+
+333 
+j
+ = 0; j < 
+NL
+; j++)
+
+335 
+F
+[
+i
+*
+NL
+ + 
+j
+] = 0;
+
+336 
+k
+ = 0; k < 
+NM
+; ++k)
+
+338 
+F
+[
+i
+*
+NL
+ + 
+j
+] +ğ
+C
+[i*
+NM
+ + 
+k
+] * 
+D
+[k*NL + j];
+
+344 
+i
+ = 0; i < 
+NI
+; i++)
+
+346 
+j
+ = 0; j < 
+NL
+; j++)
+
+348 
+G
+[
+i
+*
+NL
+ + 
+j
+] = 0;
+
+349 
+k
+ = 0; k < 
+NJ
+; ++k)
+
+351 
+G
+[
+i
+*
+NL
+ + 
+j
+] +ğ
+E
+[i*
+NJ
+ + 
+k
+] * 
+F
+[k*NL + j];
+
+355 
+	}
+}
+
+358 
+	$maš
+()
+
+360 
+t_¡¬t
+, 
+t_’d
+;
+
+362 
+DATA_TYPE
+* 
+A
+;
+
+363 
+DATA_TYPE
+* 
+B
+;
+
+364 
+DATA_TYPE
+* 
+C
+;
+
+365 
+DATA_TYPE
+* 
+D
+;
+
+366 
+DATA_TYPE
+* 
+E
+;
+
+367 
+DATA_TYPE
+* 
+F
+;
+
+368 
+DATA_TYPE
+* 
+G
+;
+
+369 
+DATA_TYPE
+* 
+G_ouutFromGpu
+;
+
+371 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NK
+*(DATA_TYPE));
+
+372 
+B
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NK
+*
+NJ
+*(DATA_TYPE));
+
+373 
+C
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NJ
+*
+NM
+*(DATA_TYPE));
+
+374 
+D
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NM
+*
+NL
+*(DATA_TYPE));
+
+375 
+E
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NJ
+*(DATA_TYPE));
+
+376 
+F
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NJ
+*
+NL
+*(DATA_TYPE));
+
+377 
+G
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NL
+*(DATA_TYPE));
+
+378 
+G_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NL
+*(DATA_TYPE));
+
+380 
+i
+;
+
+381 
+	`š™_¬¿y
+(
+A
+, 
+B
+, 
+C
+, 
+D
+);
+
+382 
+	`»ad_ş_fe
+();
+
+383 
+	`ş_š™Ÿliz©iÚ
+();
+
+384 
+	`ş_mem_š™
+(
+A
+, 
+B
+, 
+C
+, 
+D
+, 
+E
+, 
+F
+, 
+G
+);
+
+385 
+	`ş_lßd_´og
+();
+
+387 
+	`ş_Ïunch_k”Ãl
+();
+
+389 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+g_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NL
+, 
+G_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+390 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+392 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+393 
+	`mm3_ıu
+(
+A
+, 
+B
+, 
+C
+, 
+D
+, 
+E
+, 
+F
+, 
+G
+);
+
+394 
+t_’d
+ = 
+	`¹şock
+();
+
+395 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+396 
+	`com·»ResuÉs
+(
+G
+, 
+G_ouutFromGpu
+);
+
+397 
+	`ş_ş—n_up
+();
+
+399 
+	`ä“
+(
+A
+);
+
+400 
+	`ä“
+(
+B
+);
+
+401 
+	`ä“
+(
+C
+);
+
+402 
+	`ä“
+(
+D
+);
+
+403 
+	`ä“
+(
+E
+);
+
+404 
+	`ä“
+(
+F
+);
+
+405 
+	`ä“
+(
+G
+);
+
+406 
+	`ä“
+(
+G_ouutFromGpu
+);
+
+409 
+	}
+}
+
+	@ATAX/atax.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 0.05
+
+	)
+
+27 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+30 
+	#NX
+ 4096
+
+	)
+
+31 
+	#NY
+ 4096
+
+	)
+
+34 
+	#DIM_LOCAL_WORK_GROUP_X
+ 256
+
+	)
+
+35 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 1
+
+	)
+
+37 #iâdeà
+M_PI
+
+
+38 
+	#M_PI
+ 3.14159
+
+	)
+
+41 #ià
+defšed
+(
+ş_khr_å64
+)
+
+42 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+43 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+44 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+48 
+	tDATA_TYPE
+;
+
+50 
+	g¡r_‹mp
+[1024];
+
+53 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+54 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+55 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+56 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+57 
+ş_št
+ 
+	g”rcode
+;
+
+58 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+59 
+ş_k”Ãl
+ 
+	gşK”Ãl1
+;
+
+60 
+ş_k”Ãl
+ 
+	gşK”Ãl2
+;
+
+61 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+62 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+63 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+64 
+ş_mem
+ 
+	gx_mem_obj
+;
+
+65 
+ş_mem
+ 
+	gy_mem_obj
+;
+
+66 
+ş_mem
+ 
+	gtmp_mem_obj
+;
+
+67 
+FILE
+ *
+	gå
+;
+
+68 *
+	gsourû_¡r
+;
+
+69 
+size_t
+ 
+	gsourû_size
+;
+
+73 
+	$com·»ResuÉs
+(
+DATA_TYPE
+ *
+z
+, DATA_TYPE *
+z_ouutFromGpu
+)
+
+75 
+i
+, 
+ç
+;
+
+76 
+ç
+ = 0;
+
+78 
+i
+=0; i<
+NY
+; i++)
+
+80 ià(
+	`³rûÁDiff
+(
+z
+[
+i
+], 
+z_ouutFromGpu
+[i]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+82 
+ç
+++;
+
+87 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+89 
+	}
+}
+
+92 
+	$»ad_ş_fe
+()
+
+95 
+å
+ = 
+	`fİ’
+("atax.cl", "r");
+
+96 ià(!
+å
+) {
+
+97 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+98 
+	`ex™
+(1);
+
+100 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+101 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+102 
+	`fşo£
+Ğ
+å
+ );
+
+103 
+	}
+}
+
+106 
+	$š™_¬¿y
+(
+DATA_TYPE
+ *
+x
+, DATA_TYPE *
+A
+)
+
+108 
+i
+, 
+j
+;
+
+110 
+i
+ = 0; i < 
+NX
+; i++)
+
+112 
+x
+[
+i
+] = i * 
+M_PI
+;
+
+113 
+j
+ = 0; j < 
+NY
+; j++)
+
+115 
+A
+[
+i
+*
+NY
+ + 
+j
+] = ((
+DATA_TYPE
+èi*(j)è/ 
+NX
+;
+
+118 
+	}
+}
+
+121 
+	$ş_š™Ÿliz©iÚ
+()
+
+124 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+125 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+126 
+	`´štf
+("Error getting…latform IDs\n");
+
+128 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+129 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+130 
+	`´štf
+("Error getting…latform‚ame\n");
+
+132 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+133 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+134 
+	`´štf
+("Error getting…latform version\n");
+
+136 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+137 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+138 
+	`´štf
+("Error getting device IDs\n");
+
+140 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+141 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+142 
+	`´štf
+("Error getting device‚ame\n");
+
+145 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+146 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+149 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+150 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+151 
+	}
+}
+
+154 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+x
+, DATA_TYPE* 
+y
+, DATA_TYPE* 
+tmp
+)
+
+156 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NX
+ * 
+NY
+, 
+NULL
+, &
+”rcode
+);
+
+157 
+x_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NY
+, 
+NULL
+, &
+”rcode
+);
+
+158 
+y_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NY
+, 
+NULL
+, &
+”rcode
+);
+
+159 
+tmp_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NX
+, 
+NULL
+, &
+”rcode
+);
+
+161 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+163 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NX
+ * 
+NY
+, 
+A
+, 0, 
+NULL
+, NULL);
+
+164 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+x_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NY
+, 
+x
+, 0, 
+NULL
+, NULL);
+
+165 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+y_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NY
+, 
+y
+, 0, 
+NULL
+, NULL);
+
+166 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+tmp_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NX
+, 
+tmp
+, 0, 
+NULL
+, NULL);
+
+167 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+168 
+	}
+}
+
+171 
+	$ş_lßd_´og
+()
+
+174 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+176 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+179 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+180 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+183 
+şK”Ãl1
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "©ax_k”Ãl1", &
+”rcode
+);
+
+184 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+187 
+şK”Ãl2
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "©ax_k”Ãl2", &
+”rcode
+);
+
+188 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+189 
+	`şFšish
+(
+şCommªdQue
+);
+
+190 
+	}
+}
+
+193 
+	$ş_Ïunch_k”Ãl
+()
+
+195 
+t_¡¬t
+, 
+t_’d
+;
+
+197 
+nx
+ = 
+NX
+;
+
+198 
+ny
+ = 
+NY
+;
+
+200 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+201 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+202 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+203 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NX
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+204 
+glob®WÜkSize
+[1] = 1;
+
+206 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+209 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+210 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 1, (
+ş_mem
+), (*)&
+x_mem_obj
+);
+
+211 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 2, (
+ş_mem
+), (*)&
+tmp_mem_obj
+);
+
+212 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 3, (), (*)&
+nx
+);
+
+213 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 4, (), (*)&
+ny
+);
+
+214 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+217 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl1
+, 1, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+218 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+219 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+221 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NY
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+222 
+glob®WÜkSize
+[1] = 1;
+
+225 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+226 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 1, (
+ş_mem
+), (*)&
+y_mem_obj
+);
+
+227 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 2, (
+ş_mem
+), (*)&
+tmp_mem_obj
+);
+
+228 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 3, (), (*)&
+nx
+);
+
+229 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 4, (), (*)&
+ny
+);
+
+230 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+231 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl2
+, 1, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+232 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+233 
+	`şFšish
+(
+şCommªdQue
+);
+
+235 
+t_’d
+ = 
+	`¹şock
+();
+
+236 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+237 
+	}
+}
+
+240 
+	$ş_ş—n_up
+()
+
+243 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+244 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+245 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl1
+);
+
+246 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl2
+);
+
+247 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+248 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+249 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+x_mem_obj
+);
+
+250 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+y_mem_obj
+);
+
+251 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+tmp_mem_obj
+);
+
+252 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+253 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+254 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+255 
+	}
+}
+
+258 
+	$©ax_ıu
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+x
+, DATA_TYPE* 
+y
+, DATA_TYPE* 
+tmp
+)
+
+260 
+i
+,
+j
+;
+
+262 
+i
+ğ0; i < 
+NY
+; i++)
+
+264 
+y
+[
+i
+] = 0;
+
+267 
+i
+ = 0; i < 
+NX
+; i++)
+
+269 
+tmp
+[
+i
+] = 0;
+
+271 
+j
+ = 0; j < 
+NY
+; j++)
+
+273 
+tmp
+[
+i
+] =mp[i] + 
+A
+[i*
+NY
+ + 
+j
+] * 
+x
+[j];
+
+276 
+j
+ = 0; j < 
+NY
+; j++)
+
+278 
+y
+[
+j
+] = y[j] + 
+A
+[
+i
+*
+NY
+ + j] * 
+tmp
+[i];
+
+281 
+	}
+}
+
+284 
+	$maš
+()
+
+286 
+t_¡¬t
+, 
+t_’d
+;
+
+288 
+DATA_TYPE
+* 
+A
+;
+
+289 
+DATA_TYPE
+* 
+x
+;
+
+290 
+DATA_TYPE
+* 
+y
+;
+
+291 
+DATA_TYPE
+* 
+y_ouutFromGpu
+;
+
+292 
+DATA_TYPE
+* 
+tmp
+;
+
+294 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NX
+*
+NY
+*(DATA_TYPE));
+
+295 
+x
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NY
+*(DATA_TYPE));
+
+296 
+y
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NY
+*(DATA_TYPE));
+
+297 
+y_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NY
+*(DATA_TYPE));
+
+298 
+tmp
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NX
+*(DATA_TYPE));
+
+300 
+	`š™_¬¿y
+(
+x
+, 
+A
+);
+
+301 
+	`»ad_ş_fe
+();
+
+302 
+	`ş_š™Ÿliz©iÚ
+();
+
+303 
+	`ş_mem_š™
+(
+A
+, 
+x
+, 
+y
+, 
+tmp
+);
+
+304 
+	`ş_lßd_´og
+();
+
+306 
+	`ş_Ïunch_k”Ãl
+();
+
+308 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+y_mem_obj
+, 
+CL_TRUE
+, 0, 
+NY
+*(
+DATA_TYPE
+), 
+y_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+309 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+311 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+312 
+	`©ax_ıu
+(
+A
+, 
+x
+, 
+y
+, 
+tmp
+);
+
+313 
+t_’d
+ = 
+	`¹şock
+();
+
+314 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+315 
+	`com·»ResuÉs
+(
+y
+, 
+y_ouutFromGpu
+);
+
+316 
+	`ş_ş—n_up
+();
+
+318 
+	`ä“
+(
+A
+);
+
+319 
+	`ä“
+(
+x
+);
+
+320 
+	`ä“
+(
+y
+);
+
+321 
+	`ä“
+(
+y_ouutFromGpu
+);
+
+322 
+	`ä“
+(
+tmp
+);
+
+325 
+	}
+}
+
+	@BICG/bicg.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 0.05
+
+	)
+
+27 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+30 
+	#NX
+ 4096
+
+	)
+
+31 
+	#NY
+ 4096
+
+	)
+
+34 
+	#DIM_LOCAL_WORK_GROUP_X
+ 256
+
+	)
+
+35 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 1
+
+	)
+
+37 #iâdeà
+M_PI
+
+
+38 
+	#M_PI
+ 3.14159
+
+	)
+
+41 #ià
+defšed
+(
+ş_khr_å64
+)
+
+42 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+43 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+44 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+48 
+	tDATA_TYPE
+;
+
+50 
+	g¡r_‹mp
+[1024];
+
+52 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+53 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+54 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+55 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+56 
+ş_št
+ 
+	g”rcode
+;
+
+57 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+58 
+ş_k”Ãl
+ 
+	gşK”Ãl1
+;
+
+59 
+ş_k”Ãl
+ 
+	gşK”Ãl2
+;
+
+60 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+61 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+63 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+64 
+ş_mem
+ 
+	gr_mem_obj
+;
+
+65 
+ş_mem
+ 
+	gp_mem_obj
+;
+
+66 
+ş_mem
+ 
+	gq_mem_obj
+;
+
+67 
+ş_mem
+ 
+	gs_mem_obj
+;
+
+69 
+FILE
+ *
+	gå
+;
+
+70 *
+	gsourû_¡r
+;
+
+71 
+size_t
+ 
+	gsourû_size
+;
+
+75 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+s
+, DATA_TYPE* 
+s_ouutFromGpu
+, DATA_TYPE* 
+q
+, DATA_TYPE* 
+q_ouutFromGpu
+)
+
+77 
+i
+,
+ç
+;
+
+78 
+ç
+ = 0;
+
+81 
+i
+=0; i<
+NX
+; i++)
+
+83 ià(
+	`³rûÁDiff
+(
+q
+[
+i
+], 
+q_ouutFromGpu
+[i]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+85 
+ç
+++;
+
+89 
+i
+=0; i<
+NY
+; i++)
+
+91 ià(
+	`³rûÁDiff
+(
+s
+[
+i
+], 
+s_ouutFromGpu
+[i]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+93 
+ç
+++;
+
+98 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+100 
+	}
+}
+
+103 
+	$»ad_ş_fe
+()
+
+106 
+å
+ = 
+	`fİ’
+("bicg.cl", "r");
+
+107 ià(!
+å
+) {
+
+108 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+109 
+	`ex™
+(1);
+
+111 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+112 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+113 
+	`fşo£
+Ğ
+å
+ );
+
+114 
+	}
+}
+
+117 
+	$š™_¬¿y
+(
+DATA_TYPE
+ *
+A
+, DATA_TYPE *
+p
+, DATA_TYPE *
+r
+)
+
+119 
+i
+, 
+j
+;
+
+121 
+i
+ = 0; i < 
+NX
+; i++)
+
+123 
+r
+[
+i
+] = i * 
+M_PI
+;
+
+125 
+j
+ = 0; j < 
+NY
+; j++)
+
+127 
+A
+[
+i
+*
+NY
+ + 
+j
+] = ((
+DATA_TYPE
+èi*jè/ 
+NX
+;
+
+131 
+i
+ = 0; i < 
+NY
+; i++)
+
+133 
+p
+[
+i
+] = i * 
+M_PI
+;
+
+135 
+	}
+}
+
+138 
+	$ş_š™Ÿliz©iÚ
+()
+
+141 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+142 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+143 
+	`´štf
+("Error getting…latform IDs\n");
+
+145 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+146 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+147 
+	`´štf
+("Error getting…latform‚ame\n");
+
+149 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+150 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+151 
+	`´štf
+("Error getting…latform version\n");
+
+153 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+154 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+155 
+	`´štf
+("Error getting device IDs\n");
+
+157 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+158 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+159 
+	`´štf
+("Error getting device‚ame\n");
+
+162 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+163 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+166 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+167 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+168 
+	}
+}
+
+171 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+r
+, DATA_TYPE* 
+s
+, DATA_TYPE* 
+p
+, DATA_TYPE* 
+q
+)
+
+173 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NX
+ * 
+NY
+, 
+NULL
+, &
+”rcode
+);
+
+174 
+r_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NX
+, 
+NULL
+, &
+”rcode
+);
+
+175 
+s_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NX
+, 
+NULL
+, &
+”rcode
+);
+
+176 
+p_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NX
+, 
+NULL
+, &
+”rcode
+);
+
+177 
+q_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NX
+, 
+NULL
+, &
+”rcode
+);
+
+179 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+181 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NX
+ * 
+NY
+, 
+A
+, 0, 
+NULL
+, NULL);
+
+182 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+r_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NX
+, 
+r
+, 0, 
+NULL
+, NULL);
+
+183 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+s_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NX
+, 
+s
+, 0, 
+NULL
+, NULL);
+
+184 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+p_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NX
+, 
+p
+, 0, 
+NULL
+, NULL);
+
+185 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+q_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NX
+, 
+q
+, 0, 
+NULL
+, NULL);
+
+186 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+187 
+	}
+}
+
+189 
+	$ş_lßd_´og
+()
+
+192 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+194 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+197 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+198 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+201 
+şK”Ãl1
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "bicgK”Ãl1", &
+”rcode
+);
+
+202 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+205 
+şK”Ãl2
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "bicgK”Ãl2", &
+”rcode
+);
+
+206 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+208 
+	`şFšish
+(
+şCommªdQue
+);
+
+209 
+	}
+}
+
+211 
+	$ş_Ïunch_k”Ãl
+()
+
+213 
+t_¡¬t
+, 
+t_’d
+;
+
+215 
+nx
+=
+NX
+;
+
+216 
+ny
+=
+NY
+;
+
+218 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+219 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+220 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+221 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NX
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+222 
+glob®WÜkSize
+[1] = 1;
+
+224 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+227 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+228 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 1, (
+ş_mem
+), (*)&
+p_mem_obj
+);
+
+229 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 2, (
+ş_mem
+), (*)&
+q_mem_obj
+);
+
+230 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 3, (), &
+nx
+);
+
+231 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 4, (), &
+ny
+);
+
+232 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+235 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl1
+, 1, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+236 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+237 
+	`şFšish
+(
+şCommªdQue
+);
+
+239 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NY
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+240 
+glob®WÜkSize
+[1] = 1;
+
+243 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+244 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 1, (
+ş_mem
+), (*)&
+r_mem_obj
+);
+
+245 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 2, (
+ş_mem
+), (*)&
+s_mem_obj
+);
+
+246 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 3, (), &
+nx
+);
+
+247 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 4, (), &
+ny
+);
+
+248 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+251 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl2
+, 1, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+252 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+253 
+	`şFšish
+(
+şCommªdQue
+);
+
+255 
+t_’d
+ = 
+	`¹şock
+();
+
+256 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+257 
+	}
+}
+
+260 
+	$ş_ş—n_up
+()
+
+263 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+264 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+265 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl1
+);
+
+266 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl2
+);
+
+267 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+268 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+269 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+p_mem_obj
+);
+
+270 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+q_mem_obj
+);
+
+271 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+r_mem_obj
+);
+
+272 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+s_mem_obj
+);
+
+273 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+274 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+275 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+276 
+	}
+}
+
+279 
+	$bicg_ıu
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+r
+, DATA_TYPE* 
+s
+, DATA_TYPE* 
+p
+, DATA_TYPE* 
+q
+)
+
+281 
+i
+,
+j
+;
+
+283 
+i
+ = 0; i < 
+NY
+; i++)
+
+285 
+s
+[
+i
+] = 0.0;
+
+288 
+i
+ = 0; i < 
+NX
+; i++)
+
+290 
+q
+[
+i
+] = 0.0;
+
+291 
+j
+ = 0; j < 
+NY
+; j++)
+
+293 
+s
+[
+j
+] = s[j] + 
+r
+[
+i
+] * 
+A
+[i*
+NY
+ + j];
+
+294 
+q
+[
+i
+] = q[i] + 
+A
+[i*
+NY
+ + 
+j
+] * 
+p
+[j];
+
+297 
+	}
+}
+
+300 
+	$maš
+()
+
+302 
+t_¡¬t
+, 
+t_’d
+;
+
+304 
+DATA_TYPE
+* 
+A
+;
+
+305 
+DATA_TYPE
+* 
+r
+;
+
+306 
+DATA_TYPE
+* 
+s
+;
+
+307 
+DATA_TYPE
+* 
+p
+;
+
+308 
+DATA_TYPE
+* 
+q
+;
+
+309 
+DATA_TYPE
+* 
+s_ouutFromGpu
+;
+
+310 
+DATA_TYPE
+* 
+q_ouutFromGpu
+;
+
+312 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NX
+*
+NY
+*(DATA_TYPE));
+
+313 
+r
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NX
+*(DATA_TYPE));
+
+314 
+s
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NY
+*(DATA_TYPE));
+
+315 
+p
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NY
+*(DATA_TYPE));
+
+316 
+q
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NX
+*(DATA_TYPE));
+
+317 
+s_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NY
+*(DATA_TYPE));
+
+318 
+q_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NX
+*(DATA_TYPE));
+
+320 
+	`š™_¬¿y
+(
+A
+, 
+p
+, 
+r
+);
+
+321 
+	`»ad_ş_fe
+();
+
+322 
+	`ş_š™Ÿliz©iÚ
+();
+
+323 
+	`ş_mem_š™
+(
+A
+, 
+r
+, 
+s
+, 
+p
+, 
+q
+);
+
+324 
+	`ş_lßd_´og
+();
+
+326 
+	`ş_Ïunch_k”Ãl
+();
+
+328 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+s_mem_obj
+, 
+CL_TRUE
+, 0, 
+NY
+*(
+DATA_TYPE
+), 
+s_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+329 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+q_mem_obj
+, 
+CL_TRUE
+, 0, 
+NX
+*(
+DATA_TYPE
+), 
+q_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+330 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+332 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+333 
+	`bicg_ıu
+(
+A
+, 
+r
+, 
+s
+, 
+p
+, 
+q
+);
+
+334 
+t_’d
+ = 
+	`¹şock
+();
+
+335 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+336 
+	`com·»ResuÉs
+(
+s
+, 
+s_ouutFromGpu
+, 
+q
+, 
+q_ouutFromGpu
+);
+
+337 
+	`ş_ş—n_up
+();
+
+339 
+	`ä“
+(
+A
+);
+
+340 
+	`ä“
+(
+r
+);
+
+341 
+	`ä“
+(
+s
+);
+
+342 
+	`ä“
+(
+p
+);
+
+343 
+	`ä“
+(
+q
+);
+
+344 
+	`ä“
+(
+s_ouutFromGpu
+);
+
+345 
+	`ä“
+(
+q_ouutFromGpu
+);
+
+348 
+	}
+}
+
+	@CORR/correlation.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<m©h.h
+>
+
+14 
+	~<sys/time.h
+>
+
+15 
+	~<m©h.h
+>
+
+17 #ifdeà
+__APPLE__
+
+
+18 
+	~<O³nCL/İ’ş.h
+>
+
+20 
+	~<CL/ş.h
+>
+
+23 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+26 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 1.05
+
+	)
+
+28 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+31 
+	#M
+ 2048
+
+	)
+
+32 
+	#N
+ 2048
+
+	)
+
+35 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_1_X
+ 256
+
+	)
+
+36 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_1_Y
+ 1
+
+	)
+
+39 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_2_X
+ 256
+
+	)
+
+40 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_2_Y
+ 1
+
+	)
+
+43 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_3_X
+ 32
+
+	)
+
+44 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_3_Y
+ 8
+
+	)
+
+47 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_4_X
+ 256
+
+	)
+
+48 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_4_Y
+ 1
+
+	)
+
+51 
+	#sq¹_of_¬¿y_ûÎ
+(
+x
+,
+j
+è
+	`sq¹
+(x[j])
+
+	)
+
+53 #ià
+defšed
+(
+ş_khr_å64
+)
+
+54 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+55 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+56 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+60 
+	tDATA_TYPE
+;
+
+62 
+	g¡r_‹mp
+[1024];
+
+64 
+	#FLOAT_N
+ 3214212.01
+
+	)
+
+65 
+	#EPS
+ 0.005
+
+	)
+
+67 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+68 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+69 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+70 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+71 
+ş_št
+ 
+	g”rcode
+;
+
+72 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+73 
+ş_k”Ãl
+ 
+	gşK”Ãl_m—n
+;
+
+74 
+ş_k”Ãl
+ 
+	gşK”Ãl_¡d
+;
+
+75 
+ş_k”Ãl
+ 
+	gşK”Ãl_»duû
+;
+
+76 
+ş_k”Ãl
+ 
+	gşK”Ãl_cÜr
+;
+
+77 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+78 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+79 
+ş_mem
+ 
+	gd©a_mem_obj
+;
+
+80 
+ş_mem
+ 
+	g¡ddev_mem_obj
+;
+
+81 
+ş_mem
+ 
+	gm—n_mem_obj
+;
+
+82 
+ş_mem
+ 
+	gsymm©_mem_obj
+;
+
+83 
+FILE
+ *
+	gå
+;
+
+84 *
+	gsourû_¡r
+;
+
+85 
+size_t
+ 
+	gsourû_size
+;
+
+89 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+symm©
+, DATA_TYPE* 
+symm©_ouutFromGpu
+)
+
+91 
+i
+,
+j
+,
+ç
+;
+
+92 
+ç
+ = 0;
+
+94 
+i
+=0; i<=
+M
+; i++)
+
+96 
+j
+=0; j<=
+N
+; j++)
+
+98 ià(
+	`³rûÁDiff
+(
+symm©
+[
+i
+*(
+N
++1è+ 
+j
+], 
+symm©_ouutFromGpu
+[i*(N+1è+ j]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+100 
+ç
+++;
+
+101 
+	`´štf
+("I: %d J: %d \À1: %f\À2: %f\n", 
+i
+, 
+j
+, 
+symm©
+[i*(
+N
++1è+ j], 
+symm©_ouutFromGpu
+[i*(N+1) + j]);
+
+107 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+109 
+	}
+}
+
+112 
+	$»ad_ş_fe
+()
+
+115 
+å
+ = 
+	`fİ’
+("correlation.cl", "r");
+
+116 ià(!
+å
+) {
+
+117 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+118 
+	`ex™
+(1);
+
+120 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+121 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+122 
+	`fşo£
+Ğ
+å
+ );
+
+123 
+	}
+}
+
+126 
+	$š™_¬¿ys
+(
+DATA_TYPE
+* 
+d©a
+)
+
+128 
+i
+, 
+j
+;
+
+130 
+i
+=0; i<=
+M
+; i++)
+
+132 
+j
+=0; j<=
+N
+; j++)
+
+134 
+d©a
+[
+i
+*
+N
+ + 
+j
+] = ((
+DATA_TYPE
+èi*j)/ (
+M
++1);
+
+137 
+	}
+}
+
+140 
+	$ş_š™Ÿliz©iÚ
+()
+
+143 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+144 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+145 
+	`´štf
+("Error getting…latform IDs\n");
+
+147 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+148 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+149 
+	`´štf
+("Error getting…latform‚ame\n");
+
+151 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+152 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+153 
+	`´štf
+("Error getting…latform version\n");
+
+155 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+156 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+157 
+	`´štf
+("Error getting device IDs\n");
+
+159 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+160 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+161 
+	`´štf
+("Error getting device‚ame\n");
+
+164 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+165 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+168 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+169 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+170 
+	}
+}
+
+173 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+d©a
+, DATA_TYPE* 
+m—n
+, DATA_TYPE* 
+¡ddev
+, DATA_TYPE* 
+symm©
+)
+
+175 
+d©a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* (
+M
++1è* (
+N
++1), 
+NULL
+, &
+”rcode
+);
+
+176 
+symm©_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* (
+M
++1è* (
+N
++1), 
+NULL
+, &
+”rcode
+);
+
+177 
+¡ddev_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* (
+M
++1), 
+NULL
+, &
+”rcode
+);
+
+178 
+m—n_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* (
+M
++1), 
+NULL
+, &
+”rcode
+);
+
+180 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+182 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+d©a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* (
+M
++1è* (
+N
++1), 
+d©a
+, 0, 
+NULL
+, NULL);
+
+183 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+symm©_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* (
+M
++1è* (
+N
++1), 
+symm©
+, 0, 
+NULL
+, NULL);
+
+184 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+¡ddev_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* (
+M
++1), 
+¡ddev
+, 0, 
+NULL
+, NULL);
+
+185 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+m—n_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* (
+M
++1), 
+m—n
+, 0, 
+NULL
+, NULL);
+
+186 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+187 
+	}
+}
+
+190 
+	$ş_lßd_´og
+()
+
+193 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+195 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+198 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+199 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+202 
+şK”Ãl_m—n
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "m—n_k”Ãl", &
+”rcode
+);
+
+203 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel1\n");
+
+205 
+şK”Ãl_¡d
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "¡d_k”Ãl", &
+”rcode
+);
+
+206 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel2\n");
+
+208 
+şK”Ãl_»duû
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "»duû_k”Ãl", &
+”rcode
+);
+
+209 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel3\n");
+
+211 
+şK”Ãl_cÜr
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "cÜr_k”Ãl", &
+”rcode
+);
+
+212 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel4\n");
+
+213 
+	`şFšish
+(
+şCommªdQue
+);
+
+214 
+	}
+}
+
+217 
+	$ş_Ïunch_k”Ãl
+()
+
+219 
+t_¡¬t
+, 
+t_’d
+;
+
+221 
+m
+ = 
+M
+;
+
+222 
+n
+ = 
+N
+;
+
+224 
+DATA_TYPE
+ 
+æßt_n
+ = 
+FLOAT_N
+;
+
+225 
+DATA_TYPE
+ 
+•s
+ = 
+EPS
+;
+
+227 
+size_t
+ 
+loÿlWÜkSize_K”Ãl1
+[2], 
+glob®WÜkSize_K”Ãl1
+[2];
+
+228 
+size_t
+ 
+loÿlWÜkSize_K”Ãl2
+[2], 
+glob®WÜkSize_K”Ãl2
+[2];
+
+229 
+size_t
+ 
+loÿlWÜkSize_K”Ãl3
+[2], 
+glob®WÜkSize_K”Ãl3
+[2];
+
+230 
+size_t
+ 
+loÿlWÜkSize_K”Ãl4
+[2], 
+glob®WÜkSize_K”Ãl4
+[2];
+
+232 
+loÿlWÜkSize_K”Ãl1
+[0] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_1_X
+;
+
+233 
+loÿlWÜkSize_K”Ãl1
+[1] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_1_Y
+;
+
+234 
+glob®WÜkSize_K”Ãl1
+[0] = (
+size_t
+)
+	`û
+((()
+M
+è/ (()
+DIM_LOCAL_WORK_GROUP_KERNEL_1_X
+)) * DIM_LOCAL_WORK_GROUP_KERNEL_1_X;
+
+235 
+glob®WÜkSize_K”Ãl1
+[1] = 1;
+
+237 
+loÿlWÜkSize_K”Ãl2
+[0] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_2_X
+;
+
+238 
+loÿlWÜkSize_K”Ãl2
+[1] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_2_Y
+;
+
+239 
+glob®WÜkSize_K”Ãl2
+[0] = (
+size_t
+)
+	`û
+((()
+M
+è/ (()
+DIM_LOCAL_WORK_GROUP_KERNEL_2_X
+)) * DIM_LOCAL_WORK_GROUP_KERNEL_2_X;
+
+240 
+glob®WÜkSize_K”Ãl2
+[1] = 1;
+
+242 
+loÿlWÜkSize_K”Ãl3
+[0] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_3_X
+;
+
+243 
+loÿlWÜkSize_K”Ãl3
+[1] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_3_Y
+;
+
+244 
+glob®WÜkSize_K”Ãl3
+[0] = (
+size_t
+)
+	`û
+((()
+M
+è/ (()
+DIM_LOCAL_WORK_GROUP_KERNEL_3_X
+)) * DIM_LOCAL_WORK_GROUP_KERNEL_3_X;
+
+245 
+glob®WÜkSize_K”Ãl3
+[1] = (
+size_t
+)
+	`û
+((()
+N
+è/ (()
+DIM_LOCAL_WORK_GROUP_KERNEL_3_Y
+)) * DIM_LOCAL_WORK_GROUP_KERNEL_3_Y;
+
+247 
+loÿlWÜkSize_K”Ãl4
+[0] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_4_X
+;
+
+248 
+loÿlWÜkSize_K”Ãl4
+[1] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_4_Y
+;
+
+249 
+glob®WÜkSize_K”Ãl4
+[0] = (
+size_t
+)
+	`û
+((()
+M
+è/ (()
+DIM_LOCAL_WORK_GROUP_KERNEL_4_X
+)) * DIM_LOCAL_WORK_GROUP_KERNEL_4_X;
+
+250 
+glob®WÜkSize_K”Ãl4
+[1] = 1;
+
+253 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+256 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl_m—n
+, 0, (
+ş_mem
+), (*)&
+m—n_mem_obj
+);
+
+257 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_m—n
+, 1, (
+ş_mem
+), (*)&
+d©a_mem_obj
+);
+
+258 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_m—n
+, 2, (
+DATA_TYPE
+), (*)&
+æßt_n
+);
+
+259 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_m—n
+, 3, (), (*)&
+m
+);
+
+260 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_m—n
+, 4, (), (*)&
+n
+);
+
+261 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments1\n");
+
+264 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl_m—n
+, 1, 
+NULL
+, 
+glob®WÜkSize_K”Ãl1
+, 
+loÿlWÜkSize_K”Ãl1
+, 0, NULL, NULL);
+
+265 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel1\n");
+
+266 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+269 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl_¡d
+, 0, (
+ş_mem
+), (*)&
+m—n_mem_obj
+);
+
+270 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl_¡d
+, 1, (
+ş_mem
+), (*)&
+¡ddev_mem_obj
+);
+
+271 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_¡d
+, 2, (
+ş_mem
+), (*)&
+d©a_mem_obj
+);
+
+272 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_¡d
+, 3, (
+DATA_TYPE
+), (*)&
+æßt_n
+);
+
+273 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_¡d
+, 4, (
+DATA_TYPE
+), (*)&
+•s
+);
+
+274 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_¡d
+, 5, (), (*)&
+m
+);
+
+275 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_¡d
+, 6, (), (*)&
+n
+);
+
+276 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments2\n");
+
+279 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl_¡d
+, 1, 
+NULL
+, 
+glob®WÜkSize_K”Ãl2
+, 
+loÿlWÜkSize_K”Ãl2
+, 0, NULL, NULL);
+
+280 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel2\n");
+
+281 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+284 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl_»duû
+, 0, (
+ş_mem
+), (*)&
+m—n_mem_obj
+);
+
+285 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl_»duû
+, 1, (
+ş_mem
+), (*)&
+¡ddev_mem_obj
+);
+
+286 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_»duû
+, 2, (
+ş_mem
+), (*)&
+d©a_mem_obj
+);
+
+287 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_»duû
+, 3, (
+DATA_TYPE
+), (*)&
+æßt_n
+);
+
+288 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_»duû
+, 4, (), (*)&
+m
+);
+
+289 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_»duû
+, 5, (), (*)&
+n
+);
+
+290 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments3\n");
+
+293 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl_»duû
+, 2, 
+NULL
+, 
+glob®WÜkSize_K”Ãl3
+, 
+loÿlWÜkSize_K”Ãl3
+, 0, NULL, NULL);
+
+294 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel3\n");
+
+295 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+298 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl_cÜr
+, 0, (
+ş_mem
+), (*)&
+symm©_mem_obj
+);
+
+299 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_cÜr
+, 1, (
+ş_mem
+), (*)&
+d©a_mem_obj
+);
+
+300 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_cÜr
+, 2, (), (*)&
+m
+);
+
+301 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_cÜr
+, 3, (), (*)&
+n
+);
+
+302 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments4\n");
+
+305 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl_cÜr
+, 1, 
+NULL
+, 
+glob®WÜkSize_K”Ãl4
+, 
+loÿlWÜkSize_K”Ãl4
+, 0, NULL, NULL);
+
+306 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel4\n");
+
+307 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+309 
+DATA_TYPE
+ 
+v®
+ = 1.0;
+
+310 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+symm©_mem_obj
+, 
+CL_TRUE
+, ((
+M
+)*(M+1è+ (M))*(
+DATA_TYPE
+), (DATA_TYPE), &
+v®
+, 0, 
+NULL
+, NULL);
+
+312 
+	`şFšish
+(
+şCommªdQue
+);
+
+314 
+t_’d
+ = 
+	`¹şock
+();
+
+315 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+316 
+	}
+}
+
+319 
+	$ş_ş—n_up
+()
+
+322 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+323 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+324 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl_»duû
+);
+
+325 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl_m—n
+);
+
+326 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl_¡d
+);
+
+327 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl_cÜr
+);
+
+328 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+329 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+symm©_mem_obj
+);
+
+330 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+d©a_mem_obj
+);
+
+331 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+m—n_mem_obj
+);
+
+332 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+¡ddev_mem_obj
+);
+
+333 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+334 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+335 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+336 
+	}
+}
+
+339 
+	$cÜ»ÏtiÚ
+(
+DATA_TYPE
+* 
+d©a
+, DATA_TYPE* 
+m—n
+, DATA_TYPE* 
+¡ddev
+, DATA_TYPE* 
+symm©
+)
+
+341 
+i
+, 
+j
+, 
+j1
+, 
+j2
+;
+
+344 
+j
+ = 1; j <ğ
+M
+; j++)
+
+346 
+m—n
+[
+j
+] = 0.0;
+
+348 
+i
+ = 1; i <ğ
+N
+; i++)
+
+350 
+m—n
+[
+j
+] +ğ
+d©a
+[
+i
+*(
+M
++1) + j];
+
+353 
+m—n
+[
+j
+] /ğ(
+DATA_TYPE
+)
+FLOAT_N
+;
+
+357 
+j
+ = 1; j <ğ
+M
+; j++)
+
+359 
+¡ddev
+[
+j
+] = 0.0;
+
+361 
+i
+ = 1; i <ğ
+N
+; i++)
+
+363 
+¡ddev
+[
+j
+] +ğ(
+d©a
+[
+i
+*(
+M
++1è+ j] - 
+m—n
+[j]) * (data[i*(M+1) + j] - mean[j]);
+
+366 
+¡ddev
+[
+j
+] /ğ
+FLOAT_N
+;
+
+367 
+¡ddev
+[
+j
+] = 
+	`sq¹_of_¬¿y_ûÎ
+(stddev, j);
+
+368 
+¡ddev
+[
+j
+] = stddev[j] <ğ
+EPS
+ ? 1.0 : stddev[j];
+
+372 
+i
+ = 1; i <ğ
+N
+; i++)
+
+374 
+j
+ = 1; j <ğ
+M
+; j++)
+
+376 
+d©a
+[
+i
+*(
+M
++1è+ 
+j
+] -ğ
+m—n
+[j];
+
+377 
+d©a
+[
+i
+*(
+M
++1è+ 
+j
+] /ğ
+	`sq¹
+(
+FLOAT_N
+) ;
+
+378 
+d©a
+[
+i
+*(
+M
++1è+ 
+j
+] /ğ
+¡ddev
+[j];
+
+383 
+j1
+ = 1; j1 <ğ
+M
+-1; j1++)
+
+385 
+symm©
+[
+j1
+*(
+M
++1) + j1] = 1.0;
+
+387 
+j2
+ = 
+j1
++1; j2 <ğ
+M
+; j2++)
+
+389 
+symm©
+[
+j1
+*(
+M
++1è+ 
+j2
+] = 0.0;
+
+391 
+i
+ = 1; i <ğ
+N
+; i++)
+
+393 
+symm©
+[
+j1
+*(
+M
++1è+ 
+j2
+] +ğ(
+d©a
+[
+i
+*(M+1) + j1] * data[i*(M+1) + j2]);
+
+396 
+symm©
+[
+j2
+*(
+M
++1è+ 
+j1
+] = symmat[j1*(M+1) + j2];
+
+400 
+symm©
+[
+M
+*(M+1) + M] = 1.0;
+
+401 
+	}
+}
+
+404 
+	$maš
+()
+
+406 
+t_¡¬t
+, 
+t_’d
+;
+
+408 
+DATA_TYPE
+* 
+d©a
+;
+
+409 
+DATA_TYPE
+* 
+m—n
+;
+
+410 
+DATA_TYPE
+* 
+¡ddev
+;
+
+411 
+DATA_TYPE
+* 
+symm©
+;
+
+412 
+DATA_TYPE
+* 
+symm©_ouutFromGpu
+;
+
+414 
+d©a
+ = (
+DATA_TYPE
+*)
+	`m®loc
+((
+M
+ + 1)*(
+N
+ + 1)*(DATA_TYPE));
+
+415 
+m—n
+ = (
+DATA_TYPE
+*)
+	`m®loc
+((
+M
+ + 1)*(DATA_TYPE));
+
+416 
+¡ddev
+ = (
+DATA_TYPE
+*)
+	`m®loc
+((
+M
+ + 1)*(DATA_TYPE));
+
+417 
+symm©
+ = (
+DATA_TYPE
+*)
+	`m®loc
+((
+M
+ + 1)*(
+N
+ + 1)*(DATA_TYPE));
+
+418 
+symm©_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+((
+M
+ + 1)*(
+N
+ + 1)*(DATA_TYPE));
+
+420 
+	`š™_¬¿ys
+(
+d©a
+);
+
+421 
+	`»ad_ş_fe
+();
+
+422 
+	`ş_š™Ÿliz©iÚ
+();
+
+423 
+	`ş_mem_š™
+(
+d©a
+, 
+m—n
+, 
+¡ddev
+, 
+symm©
+);
+
+424 
+	`ş_lßd_´og
+();
+
+426 
+	`ş_Ïunch_k”Ãl
+();
+
+428 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+symm©_mem_obj
+, 
+CL_TRUE
+, 0, (
+M
++1è* (
+N
++1è* (
+DATA_TYPE
+), 
+symm©_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+429 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+431 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+432 
+	`cÜ»ÏtiÚ
+(
+d©a
+, 
+m—n
+, 
+¡ddev
+, 
+symm©
+);
+
+433 
+t_’d
+ = 
+	`¹şock
+();
+
+434 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+435 
+	`com·»ResuÉs
+(
+symm©
+, 
+symm©_ouutFromGpu
+);
+
+436 
+	`ş_ş—n_up
+();
+
+438 
+	`ä“
+(
+d©a
+);
+
+439 
+	`ä“
+(
+m—n
+);
+
+440 
+	`ä“
+(
+¡ddev
+);
+
+441 
+	`ä“
+(
+symm©
+);
+
+442 
+	`ä“
+(
+symm©_ouutFromGpu
+);
+
+445 
+	}
+}
+
+	@COVAR/covariance.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<m©h.h
+>
+
+14 
+	~<sys/time.h
+>
+
+15 
+	~<m©h.h
+>
+
+17 #ifdeà
+__APPLE__
+
+
+18 
+	~<O³nCL/İ’ş.h
+>
+
+20 
+	~<CL/ş.h
+>
+
+23 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+26 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 0.05
+
+	)
+
+28 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+31 
+	#M
+ 2048
+
+	)
+
+32 
+	#N
+ 2048
+
+	)
+
+35 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_1_X
+ 256
+
+	)
+
+36 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_1_Y
+ 1
+
+	)
+
+39 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_2_X
+ 32
+
+	)
+
+40 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_2_Y
+ 8
+
+	)
+
+43 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_3_X
+ 256
+
+	)
+
+44 
+	#DIM_LOCAL_WORK_GROUP_KERNEL_3_Y
+ 1
+
+	)
+
+46 
+	#sq¹_of_¬¿y_ûÎ
+(
+x
+,
+j
+è
+	`sq¹
+(x[j])
+
+	)
+
+48 #ià
+defšed
+(
+ş_khr_å64
+)
+
+49 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+50 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+51 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+55 
+	tDATA_TYPE
+;
+
+57 
+	g¡r_‹mp
+[1024];
+
+59 
+DATA_TYPE
+ 
+	gæßt_n
+= 3214212.01;
+
+60 
+DATA_TYPE
+ 
+	g•s
+= 0.005;
+
+62 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+63 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+64 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+65 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+66 
+ş_št
+ 
+	g”rcode
+;
+
+67 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+68 
+ş_k”Ãl
+ 
+	gşK”Ãl_m—n
+;
+
+69 
+ş_k”Ãl
+ 
+	gşK”Ãl_¡d
+;
+
+70 
+ş_k”Ãl
+ 
+	gşK”Ãl_»duû
+;
+
+71 
+ş_k”Ãl
+ 
+	gşK”Ãl_cov¬
+;
+
+72 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+73 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+74 
+ş_mem
+ 
+	gd©a_mem_obj
+;
+
+75 
+ş_mem
+ 
+	g¡ddev_mem_obj
+;
+
+76 
+ş_mem
+ 
+	gm—n_mem_obj
+;
+
+77 
+ş_mem
+ 
+	gsymm©_mem_obj
+;
+
+78 
+FILE
+ *
+	gå
+;
+
+79 *
+	gsourû_¡r
+;
+
+80 
+size_t
+ 
+	gsourû_size
+;
+
+84 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+symm©
+, DATA_TYPE* 
+symm©_ouutFromGpu
+)
+
+86 
+i
+,
+j
+,
+ç
+;
+
+87 
+ç
+ = 0;
+
+89 
+i
+=0; i<=
+M
+; i++)
+
+91 
+j
+=0; j<=
+N
+; j++)
+
+93 ià(
+	`³rûÁDiff
+(
+symm©
+[
+i
+*(
+N
++1è+ 
+j
+], 
+symm©_ouutFromGpu
+[i*(N+1è+ j]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+95 
+ç
+++;
+
+99 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+101 
+	}
+}
+
+104 
+	$»ad_ş_fe
+()
+
+107 
+å
+ = 
+	`fİ’
+("covariance.cl", "r");
+
+108 ià(!
+å
+) {
+
+109 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+110 
+	`ex™
+(1);
+
+112 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+113 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+114 
+	`fşo£
+Ğ
+å
+ );
+
+115 
+	}
+}
+
+118 
+	$š™_¬¿ys
+(
+DATA_TYPE
+* 
+d©a
+)
+
+120 
+i
+, 
+j
+;
+
+122 
+i
+ = 0; i < 
+M
+; i++)
+
+124 
+j
+ = 0; j < 
+N
+; j++)
+
+126 
+d©a
+[
+i
+*(
+N
++1è+ 
+j
+] = ((
+DATA_TYPE
+èi*jè/ 
+M
+;
+
+129 
+	}
+}
+
+132 
+	$ş_š™Ÿliz©iÚ
+()
+
+135 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+136 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+137 
+	`´štf
+("Error getting…latform IDs\n");
+
+139 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+140 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+141 
+	`´štf
+("Error getting…latform‚ame\n");
+
+143 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+144 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+145 
+	`´štf
+("Error getting…latform version\n");
+
+147 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+148 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+149 
+	`´štf
+("Error getting device IDs\n");
+
+151 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+152 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+153 
+	`´štf
+("Error getting device‚ame\n");
+
+156 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+157 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+160 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+161 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+162 
+	}
+}
+
+165 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+d©a
+, DATA_TYPE* 
+symm©
+, DATA_TYPE* 
+m—n
+)
+
+167 
+d©a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* (
+M
++1è* (
+N
++1), 
+NULL
+, &
+”rcode
+);
+
+168 
+symm©_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* (
+M
++1è* (
+N
++1), 
+NULL
+, &
+”rcode
+);
+
+169 
+m—n_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* (
+M
++1), 
+NULL
+, &
+”rcode
+);
+
+171 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+173 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+d©a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* (
+M
++1è* (
+N
++1), 
+d©a
+, 0, 
+NULL
+, NULL);
+
+174 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+symm©_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* (
+M
++1è* (
+N
++1), 
+symm©
+, 0, 
+NULL
+, NULL);
+
+175 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+m—n_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* (
+M
++1), 
+m—n
+, 0, 
+NULL
+, NULL);
+
+176 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+177 
+	}
+}
+
+180 
+	$ş_lßd_´og
+()
+
+183 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+185 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+188 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+189 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+192 
+şK”Ãl_m—n
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "m—n_k”Ãl", &
+”rcode
+);
+
+193 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel1\n");
+
+195 
+şK”Ãl_»duû
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "»duû_k”Ãl", &
+”rcode
+);
+
+196 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel2\n");
+
+198 
+şK”Ãl_cov¬
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "cov¬_k”Ãl", &
+”rcode
+);
+
+199 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel3\n");
+
+200 
+	`şFšish
+(
+şCommªdQue
+);
+
+201 
+	}
+}
+
+204 
+	$ş_Ïunch_k”Ãl
+()
+
+206 
+t_¡¬t
+, 
+t_’d
+;
+
+208 
+m
+ = 
+M
+;
+
+209 
+n
+ = 
+N
+;
+
+211 
+size_t
+ 
+loÿlWÜkSize_K”Ãl1
+[2], 
+glob®WÜkSize_K”Ãl1
+[2];
+
+212 
+size_t
+ 
+loÿlWÜkSize_K”Ãl2
+[2], 
+glob®WÜkSize_K”Ãl2
+[2];
+
+213 
+size_t
+ 
+loÿlWÜkSize_K”Ãl3
+[2], 
+glob®WÜkSize_K”Ãl3
+[2];
+
+215 
+loÿlWÜkSize_K”Ãl1
+[0] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_1_X
+;
+
+216 
+loÿlWÜkSize_K”Ãl1
+[1] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_1_Y
+;
+
+217 
+glob®WÜkSize_K”Ãl1
+[0] = (
+size_t
+)
+	`û
+((()
+M
+è/ (()
+DIM_LOCAL_WORK_GROUP_KERNEL_1_X
+)) * DIM_LOCAL_WORK_GROUP_KERNEL_1_X;
+
+218 
+glob®WÜkSize_K”Ãl1
+[1] = 1;
+
+220 
+loÿlWÜkSize_K”Ãl2
+[0] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_2_X
+;
+
+221 
+loÿlWÜkSize_K”Ãl2
+[1] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_2_Y
+;
+
+222 
+glob®WÜkSize_K”Ãl2
+[0] = (
+size_t
+)
+	`û
+((()
+M
+è/ (()
+DIM_LOCAL_WORK_GROUP_KERNEL_2_X
+)) * DIM_LOCAL_WORK_GROUP_KERNEL_2_X;
+
+223 
+glob®WÜkSize_K”Ãl2
+[1] = (
+size_t
+)
+	`û
+((()
+N
+è/ (()
+DIM_LOCAL_WORK_GROUP_KERNEL_2_Y
+)) * DIM_LOCAL_WORK_GROUP_KERNEL_2_Y;
+
+225 
+loÿlWÜkSize_K”Ãl3
+[0] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_3_X
+;
+
+226 
+loÿlWÜkSize_K”Ãl3
+[1] = 
+DIM_LOCAL_WORK_GROUP_KERNEL_3_Y
+;
+
+227 
+glob®WÜkSize_K”Ãl3
+[0] = (
+size_t
+)
+	`û
+((()
+M
+è/ (()
+DIM_LOCAL_WORK_GROUP_KERNEL_3_X
+)) * DIM_LOCAL_WORK_GROUP_KERNEL_3_X;
+
+228 
+glob®WÜkSize_K”Ãl3
+[1] = 1;
+
+230 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+233 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl_m—n
+, 0, (
+ş_mem
+), (*)&
+m—n_mem_obj
+);
+
+234 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_m—n
+, 1, (
+ş_mem
+), (*)&
+d©a_mem_obj
+);
+
+235 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_m—n
+, 2, (
+DATA_TYPE
+), (*)&
+æßt_n
+);
+
+236 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_m—n
+, 3, (), (*)&
+m
+);
+
+237 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_m—n
+, 4, (), (*)&
+n
+);
+
+238 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments1\n");
+
+241 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl_m—n
+, 1, 
+NULL
+, 
+glob®WÜkSize_K”Ãl1
+, 
+loÿlWÜkSize_K”Ãl1
+, 0, NULL, NULL);
+
+242 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel1\n");
+
+243 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+247 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl_»duû
+, 0, (
+ş_mem
+), (*)&
+m—n_mem_obj
+);
+
+248 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_»duû
+, 1, (
+ş_mem
+), (*)&
+d©a_mem_obj
+);
+
+249 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_»duû
+, 2, (), (*)&
+m
+);
+
+250 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_»duû
+, 3, (), (*)&
+n
+);
+
+252 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments2\n");
+
+255 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl_»duû
+, 2, 
+NULL
+, 
+glob®WÜkSize_K”Ãl2
+, 
+loÿlWÜkSize_K”Ãl2
+, 0, NULL, NULL);
+
+256 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel2\n");
+
+257 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+261 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl_cov¬
+, 0, (
+ş_mem
+), (*)&
+symm©_mem_obj
+);
+
+262 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_cov¬
+, 1, (
+ş_mem
+), (*)&
+d©a_mem_obj
+);
+
+263 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_cov¬
+, 2, (), (*)&
+m
+);
+
+264 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl_cov¬
+, 3, (), (*)&
+n
+);
+
+266 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments4\n");
+
+269 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl_cov¬
+, 1, 
+NULL
+, 
+glob®WÜkSize_K”Ãl3
+, 
+loÿlWÜkSize_K”Ãl3
+, 0, NULL, NULL);
+
+270 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel4\n");
+
+271 
+	`şFšish
+(
+şCommªdQue
+);
+
+273 
+t_’d
+ = 
+	`¹şock
+();
+
+274 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+275 
+	}
+}
+
+278 
+	$ş_ş—n_up
+()
+
+281 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+282 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+283 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl_»duû
+);
+
+284 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl_m—n
+);
+
+285 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl_¡d
+);
+
+286 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl_cov¬
+);
+
+287 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+288 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+symm©_mem_obj
+);
+
+289 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+d©a_mem_obj
+);
+
+290 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+m—n_mem_obj
+);
+
+291 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+¡ddev_mem_obj
+);
+
+292 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+293 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+294 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+295 
+	}
+}
+
+298 
+	$cov¬Ÿnû
+(
+DATA_TYPE
+* 
+d©a
+, DATA_TYPE* 
+symm©
+, DATA_TYPE* 
+m—n
+)
+
+300 
+i
+, 
+j
+, 
+j1
+,
+j2
+;
+
+303 
+j
+ = 1; j <ğ
+M
+; j++)
+
+305 
+m—n
+[
+j
+] = 0.0;
+
+306 
+i
+ = 1; i <ğ
+N
+; i++)
+
+308 
+m—n
+[
+j
+] +ğ
+d©a
+[
+i
+*(
+M
++1) + j];
+
+310 
+m—n
+[
+j
+] /ğ
+æßt_n
+;
+
+314 
+i
+ = 1; i <ğ
+N
+; i++)
+
+316 
+j
+ = 1; j <ğ
+M
+; j++)
+
+318 
+d©a
+[
+i
+*(
+M
++1è+ 
+j
+] -ğ
+m—n
+[j];
+
+323 
+j1
+ = 1; j1 <ğ
+M
+; j1++)
+
+325 
+j2
+ = 
+j1
+; j2 <ğ
+M
+; j2++)
+
+327 
+symm©
+[
+j1
+*(
+M
++1è+ 
+j2
+] = 0.0;
+
+328 
+i
+ = 1; i <ğ
+N
+; i++)
+
+330 
+symm©
+[
+j1
+*(
+M
++1è+ 
+j2
+] +ğ
+d©a
+[
+i
+*(M+1) + j1] * data[i*(M+1) + j2];
+
+332 
+symm©
+[
+j2
+*(
+M
++1è+ 
+j1
+] = symmat[j1*(M+1) + j2];
+
+335 
+	}
+}
+
+338 
+	$maš
+()
+
+340 
+t_¡¬t
+, 
+t_’d
+;
+
+342 
+DATA_TYPE
+* 
+d©a
+;
+
+343 
+DATA_TYPE
+* 
+symm©
+;
+
+344 
+DATA_TYPE
+* 
+m—n
+;
+
+345 
+DATA_TYPE
+* 
+symm©_ouutFromGpu
+;
+
+347 
+DATA_TYPE
+* 
+¡ddev_deb
+;
+
+348 
+DATA_TYPE
+* 
+m—n_deb
+;
+
+349 
+DATA_TYPE
+* 
+d©a_deb
+;
+
+351 
+d©a
+ = (
+DATA_TYPE
+*)
+	`m®loc
+((
+M
+ + 1)*(
+N
+ + 1)*(DATA_TYPE));
+
+352 
+symm©
+ = (
+DATA_TYPE
+*)
+	`m®loc
+((
+M
+ + 1)*(M + 1)*(DATA_TYPE));
+
+353 
+m—n
+ = (
+DATA_TYPE
+*)
+	`m®loc
+((
+M
+ + 1)*(DATA_TYPE));
+
+354 
+symm©_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+((
+M
+ + 1)*(M + 1)*(DATA_TYPE));
+
+356 
+	`š™_¬¿ys
+(
+d©a
+);
+
+357 
+	`»ad_ş_fe
+();
+
+358 
+	`ş_š™Ÿliz©iÚ
+();
+
+359 
+	`ş_mem_š™
+(
+d©a
+, 
+symm©
+, 
+m—n
+);
+
+360 
+	`ş_lßd_´og
+();
+
+362 
+	`ş_Ïunch_k”Ãl
+();
+
+364 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+symm©_mem_obj
+, 
+CL_TRUE
+, 0, (
+M
++1è* (
+N
++1è* (
+DATA_TYPE
+), 
+symm©_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+365 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+367 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+368 
+	`cov¬Ÿnû
+(
+d©a
+, 
+symm©
+, 
+m—n
+);
+
+369 
+t_’d
+ = 
+	`¹şock
+();
+
+370 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+371 
+	`com·»ResuÉs
+(
+symm©
+, 
+symm©_ouutFromGpu
+);
+
+372 
+	`ş_ş—n_up
+();
+
+374 
+	`ä“
+(
+d©a
+);
+
+375 
+	`ä“
+(
+symm©
+);
+
+376 
+	`ä“
+(
+m—n
+);
+
+377 
+	`ä“
+(
+symm©_ouutFromGpu
+);
+
+380 
+	}
+}
+
+	@FDTD-2D/fdtd2d.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 1.05
+
+	)
+
+28 
+	#TMAX
+ 500
+
+	)
+
+29 
+	#NX
+ 2048
+
+	)
+
+30 
+	#NY
+ 2048
+
+	)
+
+33 
+	#DIM_LOCAL_WORK_GROUP_X
+ 32
+
+	)
+
+34 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 8
+
+	)
+
+36 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+38 #ià
+defšed
+(
+ş_khr_å64
+)
+
+39 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+40 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+41 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+45 
+	tDATA_TYPE
+;
+
+47 
+	g¡r_‹mp
+[1024];
+
+49 
+DATA_TYPE
+ 
+	g®pha
+ = 23;
+
+50 
+DATA_TYPE
+ 
+	gb‘a
+ = 15;
+
+52 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+53 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+54 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+55 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+56 
+ş_št
+ 
+	g”rcode
+;
+
+57 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+58 
+ş_k”Ãl
+ 
+	gşK”Ãl1
+;
+
+59 
+ş_k”Ãl
+ 
+	gşK”Ãl2
+;
+
+60 
+ş_k”Ãl
+ 
+	gşK”Ãl3
+;
+
+61 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+62 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+64 
+ş_mem
+ 
+	gfiù_mem_obj
+;
+
+65 
+ş_mem
+ 
+	gex_mem_obj
+;
+
+66 
+ş_mem
+ 
+	gey_mem_obj
+;
+
+67 
+ş_mem
+ 
+	ghz_mem_obj
+;
+
+69 
+FILE
+ *
+	gå
+;
+
+70 *
+	gsourû_¡r
+;
+
+71 
+size_t
+ 
+	gsourû_size
+;
+
+75 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+hz1
+, DATA_TYPE* 
+hz2
+)
+
+77 
+i
+, 
+j
+, 
+ç
+;
+
+78 
+ç
+ = 0;
+
+80 
+i
+=0; i < 
+NX
+; i++)
+
+82 
+j
+=0; j < 
+NY
+; j++)
+
+84 ià(
+	`³rûÁDiff
+(
+hz1
+[
+i
+*
+NY
+ + 
+j
+], 
+hz2
+[i*NY + j]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+86 
+ç
+++;
+
+92 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+94 
+	}
+}
+
+97 
+	$»ad_ş_fe
+()
+
+100 
+å
+ = 
+	`fİ’
+("fdtd.cl", "r");
+
+101 ià(!
+å
+) {
+
+102 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+103 
+	`ex™
+(1);
+
+105 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+106 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+107 
+	`fşo£
+Ğ
+å
+ );
+
+108 
+	}
+}
+
+111 
+	$š™_¬¿ys
+(
+DATA_TYPE
+* 
+_fiù_
+, DATA_TYPE* 
+ex
+, DATA_TYPE* 
+ey
+, DATA_TYPE* 
+hz
+)
+
+113 
+i
+, 
+j
+;
+
+115 
+i
+ = 0; i < 
+TMAX
+; i++)
+
+117 
+_fiù_
+[
+i
+] = (
+DATA_TYPE
+) i;
+
+120 
+i
+ = 0; i < 
+NX
+; i++)
+
+122 
+j
+ = 0; j < 
+NY
+; j++)
+
+124 
+ex
+[
+i
+*
+NY
+ + 
+j
+] = ((
+DATA_TYPE
+èi*(j+1è+ 1è/ 
+NX
+;
+
+125 
+ey
+[
+i
+*
+NY
+ + 
+j
+] = ((
+DATA_TYPE
+è(i-1)*(j+2è+ 2è/ 
+NX
+;
+
+126 
+hz
+[
+i
+*
+NY
+ + 
+j
+] = ((
+DATA_TYPE
+è(i-9)*(j+4è+ 3è/ 
+NX
+;
+
+129 
+	}
+}
+
+132 
+	$ş_š™Ÿliz©iÚ
+()
+
+135 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+136 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+137 
+	`´štf
+("Error getting…latform IDs\n");
+
+139 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+140 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+141 
+	`´štf
+("Error getting…latform‚ame\n");
+
+143 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+144 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+145 
+	`´štf
+("Error getting…latform version\n");
+
+147 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+148 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+149 
+	`´štf
+("Error getting device IDs\n");
+
+151 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+152 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+153 
+	`´štf
+("Error getting device‚ame\n");
+
+156 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+157 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+160 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+161 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+162 
+	}
+}
+
+165 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+_fiù_
+, DATA_TYPE* 
+ex
+, DATA_TYPE* 
+ey
+, DATA_TYPE* 
+hz
+)
+
+167 
+fiù_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+TMAX
+, 
+NULL
+, &
+”rcode
+);
+
+168 
+ex_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NX
+ * (
+NY
+ + 1), 
+NULL
+, &
+”rcode
+);
+
+169 
+ey_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* (
+NX
+ + 1è* 
+NY
+, 
+NULL
+, &
+”rcode
+);
+
+170 
+hz_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NX
+ * 
+NY
+, 
+NULL
+, &
+”rcode
+);
+
+172 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+174 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+fiù_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+TMAX
+, 
+_fiù_
+, 0, 
+NULL
+, NULL);
+
+175 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+ex_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NX
+ * (
+NY
+ + 1), 
+ex
+, 0, 
+NULL
+, NULL);
+
+176 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+ey_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* (
+NX
+ + 1è* 
+NY
+, 
+ey
+, 0, 
+NULL
+, NULL);
+
+177 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+hz_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NX
+ * 
+NY
+, 
+hz
+, 0, 
+NULL
+, NULL);
+
+178 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+179 
+	}
+}
+
+182 
+	$ş_lßd_´og
+()
+
+185 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+187 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+190 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+191 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+194 
+şK”Ãl1
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "fdtd_k”Ãl1", &
+”rcode
+);
+
+195 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel1\n");
+
+198 
+şK”Ãl2
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "fdtd_k”Ãl2", &
+”rcode
+);
+
+199 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel1\n");
+
+202 
+şK”Ãl3
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "fdtd_k”Ãl3", &
+”rcode
+);
+
+203 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel1\n");
+
+204 
+	`şFšish
+(
+şCommªdQue
+);
+
+205 
+	}
+}
+
+208 
+	$ş_Ïunch_k”Ãl
+()
+
+210 
+t_¡¬t
+, 
+t_’d
+;
+
+212 
+nx
+ = 
+NX
+;
+
+213 
+ny
+ = 
+NY
+;
+
+215 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+216 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+217 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+218 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NY
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+219 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+NX
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+221 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+222 
+t
+;
+
+223 
+t
+=0;t<
+TMAX
+;t++)
+
+226 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 0, (
+ş_mem
+), (*)&
+fiù_mem_obj
+);
+
+227 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 1, (
+ş_mem
+), (*)&
+ex_mem_obj
+);
+
+228 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 2, (
+ş_mem
+), (*)&
+ey_mem_obj
+);
+
+229 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 3, (
+ş_mem
+), (*)&
+hz_mem_obj
+);
+
+230 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 4, (), (*)&
+t
+);
+
+231 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 5, (), (*)&
+nx
+);
+
+232 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 6, (), (*)&
+ny
+);
+
+234 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments1\n");
+
+236 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl1
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+237 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel1\n");
+
+238 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+241 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 0, (
+ş_mem
+), (*)&
+ex_mem_obj
+);
+
+242 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 1, (
+ş_mem
+), (*)&
+ey_mem_obj
+);
+
+243 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 2, (
+ş_mem
+), (*)&
+hz_mem_obj
+);
+
+244 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 3, (), (*)&
+nx
+);
+
+245 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 4, (), (*)&
+ny
+);
+
+247 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments1\n");
+
+249 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl2
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+250 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel1\n");
+
+251 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+254 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 0, (
+ş_mem
+), (*)&
+ex_mem_obj
+);
+
+255 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 1, (
+ş_mem
+), (*)&
+ey_mem_obj
+);
+
+256 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 2, (
+ş_mem
+), (*)&
+hz_mem_obj
+);
+
+257 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 3, (), (*)&
+nx
+);
+
+258 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 4, (), (*)&
+ny
+);
+
+260 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments1\n");
+
+262 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl3
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+263 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel1\n");
+
+264 
+	`şFšish
+(
+şCommªdQue
+);
+
+267 
+t_’d
+ = 
+	`¹şock
+();
+
+268 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+269 
+	}
+}
+
+272 
+	$ş_ş—n_up
+()
+
+275 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+276 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+277 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl1
+);
+
+278 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl2
+);
+
+279 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl3
+);
+
+280 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+281 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+fiù_mem_obj
+);
+
+282 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+ex_mem_obj
+);
+
+283 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+ey_mem_obj
+);
+
+284 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+hz_mem_obj
+);
+
+285 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+286 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+287 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+288 
+	}
+}
+
+291 
+	$runFdtd
+(
+DATA_TYPE
+* 
+_fiù_
+, DATA_TYPE* 
+ex
+, DATA_TYPE* 
+ey
+, DATA_TYPE* 
+hz
+)
+
+293 
+t
+, 
+i
+, 
+j
+;
+
+295 
+t
+=0; < 
+TMAX
+;++)
+
+297 
+j
+=0; j < 
+NY
+; j++)
+
+299 
+ey
+[0*
+NY
+ + 
+j
+] = 
+_fiù_
+[
+t
+];
+
+302 
+i
+ = 1; i < 
+NX
+; i++)
+
+304 
+j
+ = 0; j < 
+NY
+; j++)
+
+306 
+ey
+[
+i
+*
+NY
+ + 
+j
+] =ƒy[i*NY + j] - 0.5*(
+hz
+[i*NY + j] - hz[(i-1)*NY + j]);
+
+310 
+i
+ = 0; i < 
+NX
+; i++)
+
+312 
+j
+ = 1; j < 
+NY
+; j++)
+
+314 
+ex
+[
+i
+*(
+NY
++1è+ 
+j
+] =ƒx[i*(NY+1è+ j] - 0.5*(
+hz
+[i*NY + j] - hz[i*NY + (j-1)]);
+
+318 
+i
+ = 0; i < 
+NX
+; i++)
+
+320 
+j
+ = 0; j < 
+NY
+; j++)
+
+322 
+hz
+[
+i
+*
+NY
+ + 
+j
+] = hz[i*NY + j] - 0.7*(
+ex
+[i*(NY+1è+ (j+1)] -ƒx[i*(NY+1è+ j] + 
+ey
+[(i+1)*NY + j] -ƒy[i*NY + j]);
+
+326 
+	}
+}
+
+329 
+	$maš
+()
+
+331 
+t_¡¬t
+, 
+t_’d
+;
+
+333 
+DATA_TYPE
+* 
+_fiù_
+;
+
+334 
+DATA_TYPE
+* 
+ex
+;
+
+335 
+DATA_TYPE
+* 
+ey
+;
+
+336 
+DATA_TYPE
+* 
+hz
+;
+
+337 
+DATA_TYPE
+* 
+hz_ouutFromGpu
+;
+
+339 
+_fiù_
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+TMAX
+*(DATA_TYPE));
+
+340 
+ex
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NX
+*(
+NY
++1)*(DATA_TYPE));
+
+341 
+ey
+ = (
+DATA_TYPE
+*)
+	`m®loc
+((
+NX
++1)*
+NY
+*(DATA_TYPE));
+
+342 
+hz
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NX
+*
+NY
+*(DATA_TYPE));
+
+343 
+hz_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NX
+*
+NY
+*(DATA_TYPE));
+
+345 
+i
+;
+
+346 
+	`š™_¬¿ys
+(
+_fiù_
+, 
+ex
+, 
+ey
+, 
+hz
+);
+
+347 
+	`»ad_ş_fe
+();
+
+348 
+	`ş_š™Ÿliz©iÚ
+();
+
+349 
+	`ş_mem_š™
+(
+_fiù_
+, 
+ex
+, 
+ey
+, 
+hz
+);
+
+350 
+	`ş_lßd_´og
+();
+
+352 
+	`ş_Ïunch_k”Ãl
+();
+
+354 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+hz_mem_obj
+, 
+CL_TRUE
+, 0, 
+NX
+ * 
+NY
+ * (
+DATA_TYPE
+), 
+hz_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+355 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+357 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+358 
+	`runFdtd
+(
+_fiù_
+, 
+ex
+, 
+ey
+, 
+hz
+);
+
+359 
+t_’d
+ = 
+	`¹şock
+();
+
+360 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+361 
+	`com·»ResuÉs
+(
+hz
+, 
+hz_ouutFromGpu
+);
+
+362 
+	`ş_ş—n_up
+();
+
+364 
+	`ä“
+(
+_fiù_
+);
+
+365 
+	`ä“
+(
+ex
+);
+
+366 
+	`ä“
+(
+ey
+);
+
+367 
+	`ä“
+(
+hz
+);
+
+368 
+	`ä“
+(
+hz_ouutFromGpu
+);
+
+371 
+	}
+}
+
+	@GEMM/gemm.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 0.05
+
+	)
+
+27 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+30 
+	#NI
+ 512
+
+	)
+
+31 
+	#NJ
+ 512
+
+	)
+
+32 
+	#NK
+ 512
+
+	)
+
+35 
+	#DIM_LOCAL_WORK_GROUP_X
+ 32
+
+	)
+
+36 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 8
+
+	)
+
+38 #ià
+defšed
+(
+ş_khr_å64
+)
+
+39 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+40 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+41 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+45 
+	#ALPHA
+ 32412
+
+	)
+
+46 
+	#BETA
+ 2123
+
+	)
+
+49 
+	tDATA_TYPE
+;
+
+51 
+	g¡r_‹mp
+[1024];
+
+53 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+54 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+55 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+56 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+57 
+ş_št
+ 
+	g”rcode
+;
+
+58 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+59 
+ş_k”Ãl
+ 
+	gşK”Ãl
+;
+
+60 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+61 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+62 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+63 
+ş_mem
+ 
+	gb_mem_obj
+;
+
+64 
+ş_mem
+ 
+	gc_mem_obj
+;
+
+65 
+FILE
+ *
+	gå
+;
+
+66 *
+	gsourû_¡r
+;
+
+67 
+size_t
+ 
+	gsourû_size
+;
+
+71 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+C
+, DATA_TYPE* 
+C_ouutFromGpu
+)
+
+73 
+i
+, 
+j
+, 
+ç
+;
+
+74 
+ç
+ = 0;
+
+77 
+i
+=0; i < 
+NI
+; i++)
+
+79 
+j
+=0; j < 
+NJ
+; j++)
+
+81 ià(
+	`³rûÁDiff
+(
+C
+[
+i
+*
+NJ
+ + 
+j
+], 
+C_ouutFromGpu
+[i*NJ + j]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+83 
+ç
+++;
+
+89 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+91 
+	}
+}
+
+94 
+	$»ad_ş_fe
+()
+
+97 
+å
+ = 
+	`fİ’
+("gemm.cl", "r");
+
+98 ià(!
+å
+) {
+
+99 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+100 
+	`ex™
+(1);
+
+102 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+103 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+104 
+	`fşo£
+Ğ
+å
+ );
+
+105 
+	}
+}
+
+108 
+	$š™
+(
+DATA_TYPE
+ *
+A
+, DATA_TYPE *
+B
+, DATA_TYPE *
+C
+)
+
+110 
+i
+, 
+j
+;
+
+112 
+i
+ = 0; i < 
+NI
+; i++)
+
+114 
+j
+ = 0; j < 
+NK
+; j++)
+
+116 
+A
+[
+i
+*
+NK
+ + 
+j
+] = ((
+DATA_TYPE
+èi*jè/ 
+NI
+;
+
+120 
+i
+ = 0; i < 
+NK
+; i++)
+
+122 
+j
+ = 0; j < 
+NJ
+; j++)
+
+124 
+B
+[
+i
+*
+NJ
+ + 
+j
+] = ((
+DATA_TYPE
+) i*j + 1) / NJ;
+
+128 
+i
+ = 0; i < 
+NI
+; i++)
+
+130 
+j
+ = 0; j < 
+NJ
+; j++)
+
+132 
+C
+[
+i
+*
+NJ
+ + 
+j
+] = ((
+DATA_TYPE
+) i*j + 2) / NJ;
+
+135 
+	}
+}
+
+138 
+	$ş_š™Ÿliz©iÚ
+()
+
+141 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+142 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+143 
+	`´štf
+("Error getting…latform IDs\n");
+
+145 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+146 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+147 
+	`´štf
+("Error getting…latform‚ame\n");
+
+149 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+150 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+151 
+	`´štf
+("Error getting…latform version\n");
+
+153 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+154 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+155 
+	`´štf
+("Error getting device IDs\n");
+
+157 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+158 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+159 
+	`´štf
+("Error getting device‚ame\n");
+
+162 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+163 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+166 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+167 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+168 
+	}
+}
+
+171 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+, DATA_TYPE* 
+C
+)
+
+173 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NK
+, 
+NULL
+, &
+”rcode
+);
+
+174 
+b_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NK
+ * 
+NJ
+, 
+NULL
+, &
+”rcode
+);
+
+175 
+c_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+, 
+NULL
+, &
+”rcode
+);
+
+177 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+179 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NK
+, 
+A
+, 0, 
+NULL
+, NULL);
+
+180 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+b_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NK
+ * 
+NJ
+, 
+B
+, 0, 
+NULL
+, NULL);
+
+181 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+c_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+ * 
+NJ
+, 
+C
+, 0, 
+NULL
+, NULL);
+
+182 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+183 
+	}
+}
+
+186 
+	$ş_lßd_´og
+()
+
+189 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+191 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+194 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+195 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+198 
+şK”Ãl
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "gemm", &
+”rcode
+);
+
+199 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+200 
+	`şFšish
+(
+şCommªdQue
+);
+
+201 
+	}
+}
+
+204 
+	$ş_Ïunch_k”Ãl
+()
+
+206 
+t_¡¬t
+, 
+t_’d
+;
+
+208 
+ni
+=
+NI
+;
+
+209 
+nj
+=
+NJ
+;
+
+210 
+nk
+=
+NK
+;
+
+212 
+DATA_TYPE
+ 
+®pha
+ = 
+ALPHA
+;
+
+213 
+DATA_TYPE
+ 
+b‘a
+ = 
+BETA
+;
+
+215 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+216 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+217 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+218 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+NJ
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+219 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+NI
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+221 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+224 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+225 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 1, (
+ş_mem
+), (*)&
+b_mem_obj
+);
+
+226 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 2, (
+ş_mem
+), (*)&
+c_mem_obj
+);
+
+227 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 3, (
+DATA_TYPE
+), (*)&
+®pha
+);
+
+228 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 4, (
+DATA_TYPE
+), (*)&
+b‘a
+);
+
+229 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 5, (), (*)&
+ni
+);
+
+230 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 6, (), (*)&
+nj
+);
+
+231 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 7, (), (*)&
+nk
+);
+
+233 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+236 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+237 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+238 
+	`şFšish
+(
+şCommªdQue
+);
+
+240 
+t_’d
+ = 
+	`¹şock
+();
+
+241 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+242 
+	}
+}
+
+245 
+	$ş_ş—n_up
+()
+
+248 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+249 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+250 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl
+);
+
+251 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+252 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+253 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+b_mem_obj
+);
+
+254 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+c_mem_obj
+);
+
+255 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+256 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+257 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+258 
+	}
+}
+
+261 
+	$gemm
+(
+DATA_TYPE
+ *
+A
+, DATA_TYPE *
+B
+, DATA_TYPE *
+C
+)
+
+263 
+i
+,
+j
+,
+k
+;
+
+265 
+i
+ = 0; i < 
+NI
+; i++)
+
+267 
+j
+ = 0; j < 
+NJ
+; j++)
+
+269 
+C
+[
+i
+*
+NJ
+ + 
+j
+] *ğ
+BETA
+;
+
+271 
+k
+ = 0; k < 
+NK
+; ++k)
+
+273 
+C
+[
+i
+*
+NJ
+ + 
+j
+] +ğ
+ALPHA
+ * 
+A
+[i*
+NK
+ + 
+k
+] * 
+B
+[k*NJ + j];
+
+277 
+	}
+}
+
+280 
+	$maš
+()
+
+282 
+t_¡¬t
+, 
+t_’d
+;
+
+284 
+DATA_TYPE
+* 
+A
+;
+
+285 
+DATA_TYPE
+* 
+B
+;
+
+286 
+DATA_TYPE
+* 
+C
+;
+
+287 
+DATA_TYPE
+* 
+C_ouutFromGpu
+;
+
+289 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NK
+*(DATA_TYPE));
+
+290 
+B
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NK
+*
+NJ
+*(DATA_TYPE));
+
+291 
+C
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NJ
+*(DATA_TYPE));
+
+292 
+C_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*
+NJ
+*(DATA_TYPE));
+
+294 
+	`š™
+(
+A
+, 
+B
+, 
+C
+);
+
+295 
+	`»ad_ş_fe
+();
+
+296 
+	`ş_š™Ÿliz©iÚ
+();
+
+297 
+	`ş_mem_š™
+(
+A
+, 
+B
+, 
+C
+);
+
+298 
+	`ş_lßd_´og
+();
+
+300 
+	`ş_Ïunch_k”Ãl
+();
+
+302 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+c_mem_obj
+, 
+CL_TRUE
+, 0, 
+NI
+*
+NJ
+*(
+DATA_TYPE
+), 
+C_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+303 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+305 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+306 
+	`gemm
+(
+A
+, 
+B
+, 
+C
+);
+
+307 
+t_’d
+ = 
+	`¹şock
+();
+
+308 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+309 
+	`com·»ResuÉs
+(
+C
+, 
+C_ouutFromGpu
+);
+
+310 
+	`ş_ş—n_up
+();
+
+312 
+	`ä“
+(
+A
+);
+
+313 
+	`ä“
+(
+B
+);
+
+314 
+	`ä“
+(
+C
+);
+
+315 
+	`ä“
+(
+C_ouutFromGpu
+);
+
+318 
+	}
+}
+
+	@GESUMMV/gesummv.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 0.05
+
+	)
+
+27 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+30 
+	#N
+ 4096
+
+	)
+
+33 
+	#DIM_LOCAL_WORK_GROUP_X
+ 256
+
+	)
+
+34 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 1
+
+	)
+
+36 #ià
+defšed
+(
+ş_khr_å64
+)
+
+37 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+38 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+39 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+43 
+	tDATA_TYPE
+;
+
+45 
+	g¡r_‹mp
+[1024];
+
+47 
+DATA_TYPE
+ 
+	gALPHA
+ = 1;
+
+48 
+DATA_TYPE
+ 
+	gBETA
+ = 1;
+
+50 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+51 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+52 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+53 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+54 
+ş_št
+ 
+	g”rcode
+;
+
+55 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+56 
+ş_k”Ãl
+ 
+	gşK”Ãl1
+;
+
+57 
+ş_k”Ãl
+ 
+	gşK”Ãl2
+;
+
+58 
+ş_k”Ãl
+ 
+	gşK”Ãl3
+;
+
+59 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+60 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+62 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+63 
+ş_mem
+ 
+	gb_mem_obj
+;
+
+64 
+ş_mem
+ 
+	gx_mem_obj
+;
+
+65 
+ş_mem
+ 
+	gy_mem_obj
+;
+
+66 
+ş_mem
+ 
+	gtmp_mem_obj
+;
+
+68 
+FILE
+ *
+	gå
+;
+
+69 *
+	gsourû_¡r
+;
+
+70 
+size_t
+ 
+	gsourû_size
+;
+
+74 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+y
+, DATA_TYPE* 
+y_ouutFromGpu
+)
+
+76 
+i
+, 
+ç
+;
+
+77 
+ç
+ = 0;
+
+79 
+i
+=0; i<(
+N
+); i++)
+
+81 ià(
+	`³rûÁDiff
+(
+y
+[
+i
+], 
+y_ouutFromGpu
+[i]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+83 
+ç
+++;
+
+88 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+90 
+	}
+}
+
+93 
+	$š™
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+x
+)
+
+95 
+i
+, 
+j
+;
+
+97 
+i
+ = 0; i < 
+N
+; i++)
+
+99 
+x
+[
+i
+] = ((
+DATA_TYPE
+èiè/ 
+N
+;
+
+101 
+j
+ = 0; j < 
+N
+; j++)
+
+103 
+A
+[
+i
+*
+N
+ + 
+j
+] = ((
+DATA_TYPE
+) i*j) / N;
+
+106 
+	}
+}
+
+109 
+	$»ad_ş_fe
+()
+
+112 
+å
+ = 
+	`fİ’
+("gesummv.cl", "r");
+
+113 ià(!
+å
+) {
+
+114 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+115 
+	`ex™
+(1);
+
+117 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+118 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+119 
+	`fşo£
+Ğ
+å
+ );
+
+120 
+	}
+}
+
+123 
+	$gesummv
+(
+DATA_TYPE
+ *
+A
+, DATA_TYPE *
+B
+, DATA_TYPE *
+x
+, DATA_TYPE *
+y
+, DATA_TYPE *
+tmp
+)
+
+125 
+i
+,
+j
+;
+
+127 
+i
+ = 0; i < 
+N
+; i++)
+
+129 
+tmp
+[
+i
+] = 0;
+
+130 
+y
+[
+i
+] = 0;
+
+131 
+j
+ = 0; j < 
+N
+; j++)
+
+133 
+tmp
+[
+i
+] = 
+A
+[i*
+N
+ + 
+j
+] * 
+x
+[j] +mp[i];
+
+134 
+y
+[
+i
+] = 
+B
+[i*
+N
+ + 
+j
+] * 
+x
+[j] + y[i];
+
+137 
+y
+[
+i
+] = 
+ALPHA
+ * 
+tmp
+[i] + 
+BETA
+ * y[i];
+
+139 
+	}
+}
+
+142 
+	$ş_š™Ÿliz©iÚ
+()
+
+145 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+146 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+147 
+	`´štf
+("Error getting…latform IDs\n");
+
+149 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+150 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+151 
+	`´štf
+("Error getting…latform‚ame\n");
+
+153 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+154 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+155 
+	`´štf
+("Error getting…latform version\n");
+
+157 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+158 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+159 
+	`´štf
+("Error getting device IDs\n");
+
+161 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+162 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+163 
+	`´štf
+("Error getting device‚ame\n");
+
+166 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+167 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+170 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+171 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+172 
+	}
+}
+
+175 
+	$ş_mem_š™
+(
+DATA_TYPE
+ *
+A
+, DATA_TYPE *
+B
+, DATA_TYPE *
+x
+, DATA_TYPE *
+y
+, DATA_TYPE *
+tmp
+)
+
+177 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+ * N, 
+NULL
+, &
+”rcode
+);
+
+178 
+b_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+ * N, 
+NULL
+, &
+”rcode
+);
+
+179 
+x_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+, 
+NULL
+, &
+”rcode
+);
+
+180 
+y_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+, 
+NULL
+, &
+”rcode
+);
+
+181 
+tmp_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+, 
+NULL
+, &
+”rcode
+);
+
+183 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+185 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+ * N, 
+A
+, 0, 
+NULL
+, NULL);
+
+186 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+b_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+ * N, 
+B
+, 0, 
+NULL
+, NULL);
+
+187 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+x_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+, 
+x
+, 0, 
+NULL
+, NULL);
+
+188 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+y_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+, 
+y
+, 0, 
+NULL
+, NULL);
+
+189 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+tmp_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+, 
+tmp
+, 0, 
+NULL
+, NULL);
+
+190 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+191 
+	}
+}
+
+194 
+	$ş_lßd_´og
+()
+
+197 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+199 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+202 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+203 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+206 
+şK”Ãl1
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "gesummv_k”Ãl", &
+”rcode
+);
+
+207 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel1\n");
+
+208 
+	`şFšish
+(
+şCommªdQue
+);
+
+209 
+	}
+}
+
+212 
+	$ş_Ïunch_k”Ãl
+()
+
+214 
+t_¡¬t
+, 
+t_’d
+;
+
+216 
+n
+ = 
+N
+;
+
+218 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+219 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+220 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+221 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+N
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+222 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+N
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+224 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+227 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+228 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 1, (
+ş_mem
+), (*)&
+b_mem_obj
+);
+
+229 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 2, (
+ş_mem
+), (*)&
+x_mem_obj
+);
+
+230 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 3, (
+ş_mem
+), (*)&
+y_mem_obj
+);
+
+231 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 4, (
+ş_mem
+), (*)&
+tmp_mem_obj
+);
+
+232 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 5, (
+DATA_TYPE
+), (*)&
+ALPHA
+);
+
+233 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 6, (
+DATA_TYPE
+), (*)&
+BETA
+);
+
+234 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 7, (), (*)&
+n
+);
+
+236 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments1\n");
+
+239 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl1
+, 1, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+240 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel1\n");
+
+241 
+	`şFšish
+(
+şCommªdQue
+);
+
+243 
+t_’d
+ = 
+	`¹şock
+();
+
+244 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+245 
+	}
+}
+
+248 
+	$ş_ş—n_up
+()
+
+251 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+252 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+253 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl1
+);
+
+254 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+255 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+256 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+b_mem_obj
+);
+
+257 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+x_mem_obj
+);
+
+258 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+259 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+260 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+261 
+	}
+}
+
+264 
+	$maš
+()
+
+266 
+t_¡¬t
+, 
+t_’d
+;
+
+268 
+DATA_TYPE
+* 
+A
+;
+
+269 
+DATA_TYPE
+* 
+B
+;
+
+270 
+DATA_TYPE
+* 
+x
+;
+
+271 
+DATA_TYPE
+* 
+y
+;
+
+272 
+DATA_TYPE
+* 
+y_ouutFromGpu
+;
+
+273 
+DATA_TYPE
+* 
+tmp
+;
+
+275 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*N*(DATA_TYPE));
+
+276 
+B
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*N*(DATA_TYPE));
+
+277 
+x
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*(DATA_TYPE));
+
+278 
+y
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*(DATA_TYPE));
+
+279 
+y_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*(DATA_TYPE));
+
+280 
+tmp
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*(DATA_TYPE));
+
+282 
+	`š™
+(
+A
+, 
+x
+);
+
+283 
+	`»ad_ş_fe
+();
+
+284 
+	`ş_š™Ÿliz©iÚ
+();
+
+285 
+	`ş_mem_š™
+(
+A
+, 
+B
+, 
+x
+, 
+y
+, 
+tmp
+);
+
+286 
+	`ş_lßd_´og
+();
+
+288 
+	`ş_Ïunch_k”Ãl
+();
+
+290 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+y_mem_obj
+, 
+CL_TRUE
+, 0, 
+N
+*(
+DATA_TYPE
+), 
+y_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+291 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+293 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+294 
+	`gesummv
+(
+A
+, 
+B
+, 
+x
+, 
+y
+, 
+tmp
+);
+
+295 
+t_’d
+ = 
+	`¹şock
+();
+
+296 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+297 
+	`com·»ResuÉs
+(
+y
+, 
+y_ouutFromGpu
+);
+
+298 
+	`ş_ş—n_up
+();
+
+300 
+	`ä“
+(
+A
+);
+
+301 
+	`ä“
+(
+B
+);
+
+302 
+	`ä“
+(
+x
+);
+
+303 
+	`ä“
+(
+y
+);
+
+304 
+	`ä“
+(
+y_ouutFromGpu
+);
+
+305 
+	`ä“
+(
+tmp
+);
+
+308 
+	}
+}
+
+	@GRAMSCHM/gramschmidt.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 0.05
+
+	)
+
+27 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+30 
+	#M
+ 2048
+
+	)
+
+31 
+	#N
+ 2048
+
+	)
+
+34 
+	#DIM_THREAD_BLOCK_X
+ 256
+
+	)
+
+35 
+	#DIM_THREAD_BLOCK_Y
+ 1
+
+	)
+
+37 #ià
+defšed
+(
+ş_khr_å64
+)
+
+38 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+39 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+40 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+43 
+	tDATA_TYPE
+;
+
+46 
+	g¡r_‹mp
+[1024];
+
+49 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+50 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+51 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+52 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+53 
+ş_št
+ 
+	g”rcode
+;
+
+54 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+55 
+ş_k”Ãl
+ 
+	gşK”Ãl1
+;
+
+56 
+ş_k”Ãl
+ 
+	gşK”Ãl2
+;
+
+57 
+ş_k”Ãl
+ 
+	gşK”Ãl3
+;
+
+58 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+59 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+61 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+62 
+ş_mem
+ 
+	gr_mem_obj
+;
+
+63 
+ş_mem
+ 
+	gq_mem_obj
+;
+
+65 
+FILE
+ *
+	gå
+;
+
+66 *
+	gsourû_¡r
+;
+
+67 
+size_t
+ 
+	gsourû_size
+;
+
+71 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+A_ouutFromGpu
+)
+
+73 
+i
+, 
+j
+, 
+ç
+;
+
+74 
+ç
+ = 0;
+
+76 
+i
+=0; i < 
+M
+; i++)
+
+78 
+j
+=0; j < 
+N
+; j++)
+
+80 ià(
+	`³rûÁDiff
+(
+A
+[
+i
+*
+N
+ + 
+j
+], 
+A_ouutFromGpu
+[i*N + j]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+82 
+ç
+++;
+
+83 
+	`´štf
+("i: %d j: %d \n1: %f\À2: %f\n", 
+i
+, 
+j
+, 
+A
+[i*
+N
+ + j], 
+A_ouutFromGpu
+[i*N + j]);
+
+89 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+91 
+	}
+}
+
+94 
+	$»ad_ş_fe
+()
+
+97 
+å
+ = 
+	`fİ’
+("gramschmidt.cl", "r");
+
+98 ià(!
+å
+) {
+
+99 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+100 
+	`ex™
+(1);
+
+102 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+103 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+104 
+	`fşo£
+Ğ
+å
+ );
+
+105 
+	}
+}
+
+108 
+	$š™_¬¿y
+(
+DATA_TYPE
+* 
+A
+)
+
+110 
+i
+, 
+j
+;
+
+112 
+i
+ = 0; i < 
+M
+; i++)
+
+114 
+j
+ = 0; j < 
+N
+; j++)
+
+116 
+A
+[
+i
+*
+N
+ + 
+j
+] = ((
+DATA_TYPE
+è(i+1)*(j+1)è/ (
+M
++1);
+
+119 
+	}
+}
+
+122 
+	$ş_š™Ÿliz©iÚ
+()
+
+125 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+126 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+127 
+	`´štf
+("Error getting…latform IDs\n");
+
+129 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+130 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+131 
+	`´štf
+("Error getting…latform‚ame\n");
+
+133 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+134 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+135 
+	`´štf
+("Error getting…latform version\n");
+
+137 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+138 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+139 
+	`´štf
+("Error getting device IDs\n");
+
+141 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+142 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+143 
+	`´štf
+("Error getting device‚ame\n");
+
+146 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+147 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+150 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+151 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+152 
+	}
+}
+
+155 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+A
+)
+
+157 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+M
+ * 
+N
+, 
+NULL
+, &
+”rcode
+);
+
+158 
+r_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+M
+ * 
+N
+, 
+NULL
+, &
+”rcode
+);
+
+159 
+q_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+M
+ * 
+N
+, 
+NULL
+, &
+”rcode
+);
+
+161 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+163 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+M
+ * 
+N
+, 
+A
+, 0, 
+NULL
+, NULL);
+
+164 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+165 
+	}
+}
+
+168 
+	$ş_lßd_´og
+()
+
+171 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+173 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+176 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+177 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+180 
+şK”Ãl1
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "g¿mschmidt_k”Ãl1", &
+”rcode
+);
+
+181 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel1\n");
+
+183 
+şK”Ãl2
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "g¿mschmidt_k”Ãl2", &
+”rcode
+);
+
+184 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel2\n");
+
+186 
+şK”Ãl3
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "g¿mschmidt_k”Ãl3", &
+”rcode
+);
+
+187 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel3\n");
+
+188 
+	`şFšish
+(
+şCommªdQue
+);
+
+189 
+	}
+}
+
+192 
+	$ş_Ïunch_k”Ãl
+()
+
+194 
+t_¡¬t
+, 
+t_’d
+;
+
+196 
+m
+ = 
+M
+;
+
+197 
+n
+ = 
+N
+;
+
+199 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSizeK”Ãl1
+[2], 
+glob®WÜkSizeK”Ãl2
+[2], 
+glob®WÜkSizeK”Ãl3
+[2];
+
+201 
+loÿlWÜkSize
+[0] = 
+DIM_THREAD_BLOCK_X
+;
+
+202 
+loÿlWÜkSize
+[1] = 
+DIM_THREAD_BLOCK_Y
+;
+
+203 
+glob®WÜkSizeK”Ãl1
+[0] = 
+DIM_THREAD_BLOCK_X
+;
+
+204 
+glob®WÜkSizeK”Ãl1
+[1] = 
+DIM_THREAD_BLOCK_Y
+;
+
+205 
+glob®WÜkSizeK”Ãl2
+[0] = (
+size_t
+)
+	`û
+((()
+N
+è/ (()
+DIM_THREAD_BLOCK_X
+)) * DIM_THREAD_BLOCK_X;
+
+206 
+glob®WÜkSizeK”Ãl2
+[1] = 1;
+
+207 
+glob®WÜkSizeK”Ãl3
+[0] = (
+size_t
+)
+	`û
+((()
+N
+è/ (()
+DIM_THREAD_BLOCK_X
+)) * DIM_THREAD_BLOCK_X;
+
+208 
+glob®WÜkSizeK”Ãl3
+[1] = 1;
+
+210 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+212 
+k
+;
+
+213 
+k
+ = 0; k < 
+N
+; k++)
+
+216 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+217 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 1, (
+ş_mem
+), (*)&
+r_mem_obj
+);
+
+218 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 2, (
+ş_mem
+), (*)&
+q_mem_obj
+);
+
+219 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 3, (), (*)&
+k
+);
+
+220 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 4, (), (*)&
+m
+);
+
+221 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 5, (), (*)&
+n
+);
+
+223 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments1\n");
+
+226 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl1
+, 1, 
+NULL
+, 
+glob®WÜkSizeK”Ãl1
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+227 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel1\n");
+
+228 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+231 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+232 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 1, (
+ş_mem
+), (*)&
+r_mem_obj
+);
+
+233 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 2, (
+ş_mem
+), (*)&
+q_mem_obj
+);
+
+234 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 3, (), (*)&
+k
+);
+
+235 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 4, (), (*)&
+m
+);
+
+236 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 5, (), (*)&
+n
+);
+
+238 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments1\n");
+
+241 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl2
+, 1, 
+NULL
+, 
+glob®WÜkSizeK”Ãl2
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+242 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel2\n");
+
+243 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+246 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+247 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 1, (
+ş_mem
+), (*)&
+r_mem_obj
+);
+
+248 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 2, (
+ş_mem
+), (*)&
+q_mem_obj
+);
+
+249 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 3, (), (*)&
+k
+);
+
+250 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 4, (), (*)&
+m
+);
+
+251 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl3
+, 5, (), (*)&
+n
+);
+
+253 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments1\n");
+
+256 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl3
+, 1, 
+NULL
+, 
+glob®WÜkSizeK”Ãl3
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+257 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel3\n");
+
+258 
+	`şEnqueueB¬r›r
+(
+şCommªdQue
+);
+
+261 
+	`şFšish
+(
+şCommªdQue
+);
+
+263 
+t_’d
+ = 
+	`¹şock
+();
+
+264 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+265 
+	}
+}
+
+268 
+	$ş_ş—n_up
+()
+
+271 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+272 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+273 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl1
+);
+
+274 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl2
+);
+
+275 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl3
+);
+
+276 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+277 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+278 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+r_mem_obj
+);
+
+279 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+q_mem_obj
+);
+
+280 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+281 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+282 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+283 
+	}
+}
+
+286 
+	$g¿mschmidt
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+R
+, DATA_TYPE* 
+Q
+)
+
+288 
+i
+,
+j
+,
+k
+;
+
+289 
+DATA_TYPE
+ 
+Äm
+;
+
+290 
+k
+ = 0; k < 
+N
+; k++)
+
+292 
+Äm
+ = 0;
+
+293 
+i
+ = 0; i < 
+M
+; i++)
+
+295 
+Äm
+ +ğ
+A
+[
+i
+*
+N
+ + 
+k
+] * A[i*N + k];
+
+298 
+R
+[
+k
+*
+N
+ + k] = 
+	`sq¹
+(
+Äm
+);
+
+299 
+i
+ = 0; i < 
+M
+; i++)
+
+301 
+Q
+[
+i
+*
+N
+ + 
+k
+] = 
+A
+[i*N + k] / 
+R
+[k*N + k];
+
+304 
+j
+ = 
+k
+ + 1; j < 
+N
+; j++)
+
+306 
+R
+[
+k
+*
+N
+ + 
+j
+] = 0;
+
+307 
+i
+ = 0; i < 
+M
+; i++)
+
+309 
+R
+[
+k
+*
+N
+ + 
+j
+] +ğ
+Q
+[
+i
+*N + k] * 
+A
+[i*N + j];
+
+311 
+i
+ = 0; i < 
+M
+; i++)
+
+313 
+A
+[
+i
+*
+N
+ + 
+j
+] = A[i*N + j] - 
+Q
+[i*N + 
+k
+] * 
+R
+[k*N + j];
+
+317 
+	}
+}
+
+320 
+	$maš
+()
+
+322 
+t_¡¬t
+, 
+t_’d
+;
+
+323 
+i
+;
+
+325 
+DATA_TYPE
+* 
+A
+;
+
+326 
+DATA_TYPE
+* 
+A_ouutFromGpu
+;
+
+327 
+DATA_TYPE
+* 
+R
+;
+
+328 
+DATA_TYPE
+* 
+Q
+;
+
+330 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+M
+*
+N
+*(DATA_TYPE));
+
+331 
+A_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+M
+*
+N
+*(DATA_TYPE));
+
+332 
+R
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+M
+*
+N
+*(DATA_TYPE));
+
+333 
+Q
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+M
+*
+N
+*(DATA_TYPE));
+
+335 
+	`š™_¬¿y
+(
+A
+);
+
+336 
+	`»ad_ş_fe
+();
+
+337 
+	`ş_š™Ÿliz©iÚ
+();
+
+338 
+	`ş_mem_š™
+(
+A
+);
+
+339 
+	`ş_lßd_´og
+();
+
+341 
+	`ş_Ïunch_k”Ãl
+();
+
+343 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, 
+M
+*
+N
+*(
+DATA_TYPE
+), 
+A_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+344 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+346 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+347 
+	`g¿mschmidt
+(
+A
+, 
+R
+, 
+Q
+);
+
+348 
+t_’d
+ = 
+	`¹şock
+();
+
+349 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+351 
+	`com·»ResuÉs
+(
+A
+, 
+A_ouutFromGpu
+);
+
+352 
+	`ş_ş—n_up
+();
+
+354 
+	`ä“
+(
+A
+);
+
+355 
+	`ä“
+(
+A_ouutFromGpu
+);
+
+356 
+	`ä“
+(
+R
+);
+
+357 
+	`ä“
+(
+Q
+);
+
+360 
+	}
+}
+
+	@MVT/mvt.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 0.05
+
+	)
+
+27 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+30 
+	#N
+ 4096
+
+	)
+
+33 
+	#DIM_LOCAL_WORK_GROUP_X
+ 256
+
+	)
+
+34 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 1
+
+	)
+
+36 #ià
+defšed
+(
+ş_khr_å64
+)
+
+37 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+38 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+39 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+43 
+	tDATA_TYPE
+;
+
+45 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+46 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+47 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+48 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+49 
+ş_št
+ 
+	g”rcode
+;
+
+50 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+51 
+ş_k”Ãl
+ 
+	gşK”Ãl1
+;
+
+52 
+ş_k”Ãl
+ 
+	gşK”Ãl2
+;
+
+53 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+54 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+56 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+57 
+ş_mem
+ 
+	gx1_mem_obj
+;
+
+58 
+ş_mem
+ 
+	gx2_mem_obj
+;
+
+59 
+ş_mem
+ 
+	gy1_mem_obj
+;
+
+60 
+ş_mem
+ 
+	gy2_mem_obj
+;
+
+62 
+FILE
+ *
+	gå
+;
+
+63 *
+	gsourû_¡r
+;
+
+64 
+size_t
+ 
+	gsourû_size
+;
+
+65 cÚ¡ 
+	gLIST_SIZE
+ = 
+N
+;
+
+66 
+	g¡r_‹mp
+[1024];
+
+70 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+x1
+, DATA_TYPE* 
+x1_ouutFromGpu
+, DATA_TYPE* 
+x2
+, DATA_TYPE* 
+x2_ouutFromGpu
+)
+
+72 
+i
+, 
+ç
+;
+
+73 
+ç
+ = 0;
+
+75 
+i
+=0; i<
+N
+; i++)
+
+77 ià(
+	`³rûÁDiff
+(
+x1
+[
+i
+], 
+x1_ouutFromGpu
+[i]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+79 
+ç
+++;
+
+82 ià(
+	`³rûÁDiff
+(
+x2
+[
+i
+], 
+x2_ouutFromGpu
+[i]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+84 
+ç
+++;
+
+89 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+91 
+	}
+}
+
+94 
+	$»ad_ş_fe
+()
+
+97 
+å
+ = 
+	`fİ’
+("mvt.cl", "r");
+
+98 ià(!
+å
+) {
+
+99 
+	`årštf
+(
+¡dout
+, "Failedo†oad kernel.\n");
+
+100 
+	`ex™
+(1);
+
+102 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+103 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+104 
+	`fşo£
+Ğ
+å
+ );
+
+105 
+	}
+}
+
+108 
+	$š™_¬¿ys
+(
+DATA_TYPE
+* 
+a
+, DATA_TYPE* 
+x1
+, DATA_TYPE* 
+x2
+, DATA_TYPE* 
+y_1
+, DATA_TYPE* 
+y_2
+)
+
+110 
+i
+, 
+j
+;
+
+112 
+i
+=0; i<
+N
+; i++)
+
+114 
+x1
+[
+i
+] = 0.0;
+
+115 
+x2
+[
+i
+] = 0.0;
+
+116 
+y_1
+[
+i
+] = 0.0;
+
+117 
+y_2
+[
+i
+] = 0.0;
+
+119 
+j
+=0; j<
+N
+; j++)
+
+121 
+a
+[
+i
+*
+N
+ + 
+j
+] = (
+DATA_TYPE
+)(i+j+1.0)/N;
+
+124 
+	}
+}
+
+127 
+	$ş_š™Ÿliz©iÚ
+()
+
+130 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+131 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+132 
+	`´štf
+("Error getting…latform IDs\n");
+
+134 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+135 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+136 
+	`´štf
+("Error getting…latform‚ame\n");
+
+138 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+139 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+140 
+	`´štf
+("Error getting…latform version\n");
+
+142 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+143 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+144 
+	`´štf
+("Error getting device IDs\n");
+
+146 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+147 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+148 
+	`´štf
+("Error getting device‚ame\n");
+
+151 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+152 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+155 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+156 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+157 
+	}
+}
+
+160 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+a
+, DATA_TYPE* 
+x1
+, DATA_TYPE* 
+x2
+, DATA_TYPE* 
+y_1
+, DATA_TYPE* 
+y_2
+)
+
+162 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+ * N, 
+NULL
+, &
+”rcode
+);
+
+163 
+x1_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+, 
+NULL
+, &
+”rcode
+);
+
+164 
+x2_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+, 
+NULL
+, &
+”rcode
+);
+
+165 
+y1_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+, 
+NULL
+, &
+”rcode
+);
+
+166 
+y2_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+, 
+NULL
+, &
+”rcode
+);
+
+168 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+170 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+ * N, 
+a
+, 0, 
+NULL
+, NULL);
+
+171 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+x1_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+, 
+x1
+, 0, 
+NULL
+, NULL);
+
+172 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+x2_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+, 
+x2
+, 0, 
+NULL
+, NULL);
+
+173 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+y1_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+, 
+y_1
+, 0, 
+NULL
+, NULL);
+
+174 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+y2_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+, 
+y_2
+, 0, 
+NULL
+, NULL);
+
+176 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in writing buffers\n");
+
+177 
+	}
+}
+
+180 
+	$ş_lßd_´og
+()
+
+183 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+185 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+188 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+189 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram %d\n",errcode);
+
+192 
+şK”Ãl1
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "mvt_k”Ãl1", &
+”rcode
+);
+
+194 
+şK”Ãl2
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "mvt_k”Ãl2", &
+”rcode
+);
+
+195 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+196 
+	`şFšish
+(
+şCommªdQue
+);
+
+197 
+	}
+}
+
+200 
+	$ş_Ïunch_k”Ãl
+()
+
+202 
+t_¡¬t
+, 
+t_’d
+;
+
+204 
+n
+ = 
+N
+;
+
+206 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+207 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+208 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+209 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+N
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+210 
+glob®WÜkSize
+[1] = 1;
+
+212 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+215 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+216 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 1, (
+ş_mem
+), (*)&
+x1_mem_obj
+);
+
+217 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 2, (
+ş_mem
+), (*)&
+y1_mem_obj
+);
+
+218 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 3, (), (*)&
+n
+);
+
+219 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+222 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl1
+, 1, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+223 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+226 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+227 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 1, (
+ş_mem
+), (*)&
+x2_mem_obj
+);
+
+228 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 2, (
+ş_mem
+), (*)&
+y2_mem_obj
+);
+
+229 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl2
+, 3, (), (*)&
+n
+);
+
+230 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+233 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl2
+, 1, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+234 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+237 
+	`şFšish
+(
+şCommªdQue
+);
+
+239 
+t_’d
+ = 
+	`¹şock
+();
+
+240 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+241 
+	}
+}
+
+244 
+	$ş_ş—n_up
+()
+
+247 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+248 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+249 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl1
+);
+
+250 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl2
+);
+
+251 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+252 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+253 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+x1_mem_obj
+);
+
+254 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+x2_mem_obj
+);
+
+255 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+y1_mem_obj
+);
+
+256 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+y2_mem_obj
+);
+
+257 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+258 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+259 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+260 
+	}
+}
+
+263 
+	$runMvt
+(
+DATA_TYPE
+* 
+a
+, DATA_TYPE* 
+x1
+, DATA_TYPE* 
+x2
+, DATA_TYPE* 
+y1
+, DATA_TYPE* 
+y2
+)
+
+265 
+i
+, 
+j
+, 
+k
+, 
+l
+;
+
+267 
+i
+=0; i<
+N
+; i++)
+
+269 
+j
+=0; j<
+N
+; j++)
+
+271 
+x1
+[
+i
+] = x1[i] + 
+a
+[i*
+N
+ + 
+j
+] * 
+y1
+[j];
+
+275 
+k
+=0; k<
+N
+; k++)
+
+277 
+l
+=0;†<
+N
+;†++)
+
+279 
+x2
+[
+k
+] = x2[k] + 
+a
+[k*
+N
+ + 
+l
+] * 
+y2
+[l];
+
+282 
+	}
+}
+
+285 
+	$maš
+()
+
+287 
+t_¡¬t
+, 
+t_’d
+;
+
+289 
+DATA_TYPE
+* 
+a
+;
+
+290 
+DATA_TYPE
+* 
+x1
+;
+
+291 
+DATA_TYPE
+* 
+x2
+;
+
+292 
+DATA_TYPE
+* 
+x1_ouutFromGpu
+;
+
+293 
+DATA_TYPE
+* 
+x2_ouutFromGpu
+;
+
+294 
+DATA_TYPE
+* 
+y_1
+;
+
+295 
+DATA_TYPE
+* 
+y_2
+;
+
+297 
+a
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*N*(DATA_TYPE));
+
+298 
+x1
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*(DATA_TYPE));
+
+299 
+x2
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*(DATA_TYPE));
+
+300 
+x1_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*(DATA_TYPE));
+
+301 
+x2_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*(DATA_TYPE));
+
+302 
+y_1
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*(DATA_TYPE));
+
+303 
+y_2
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*(DATA_TYPE));
+
+305 
+	`š™_¬¿ys
+(
+a
+, 
+x1
+, 
+x2
+, 
+y_1
+, 
+y_2
+);
+
+306 
+	`»ad_ş_fe
+();
+
+307 
+	`ş_š™Ÿliz©iÚ
+();
+
+308 
+	`ş_mem_š™
+(
+a
+, 
+x1
+, 
+x2
+, 
+y_1
+, 
+y_2
+);
+
+309 
+	`ş_lßd_´og
+();
+
+311 
+	`ş_Ïunch_k”Ãl
+();
+
+313 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+x1_mem_obj
+, 
+CL_TRUE
+, 0, 
+N
+*(
+DATA_TYPE
+), 
+x1_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+314 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+x2_mem_obj
+, 
+CL_TRUE
+, 0, 
+N
+*(
+DATA_TYPE
+), 
+x2_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+315 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+317 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+318 
+	`runMvt
+(
+a
+, 
+x1
+, 
+x2
+, 
+y_1
+, 
+y_2
+);
+
+319 
+t_’d
+ = 
+	`¹şock
+();
+
+320 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+321 
+	`com·»ResuÉs
+(
+x1
+, 
+x1_ouutFromGpu
+, 
+x2
+, 
+x2_ouutFromGpu
+);
+
+322 
+	`ş_ş—n_up
+();
+
+324 
+	`ä“
+(
+a
+);
+
+325 
+	`ä“
+(
+x1
+);
+
+326 
+	`ä“
+(
+x2
+);
+
+327 
+	`ä“
+(
+x1_ouutFromGpu
+);
+
+328 
+	`ä“
+(
+x2_ouutFromGpu
+);
+
+329 
+	`ä“
+(
+y_1
+);
+
+330 
+	`ä“
+(
+y_2
+);
+
+333 
+	}
+}
+
+	@SYR2K/syr2k.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 0.05
+
+	)
+
+27 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+30 
+	#N
+ 2048
+
+	)
+
+31 
+	#M
+ 2048
+
+	)
+
+34 
+	#DIM_LOCAL_WORK_GROUP_X
+ 32
+
+	)
+
+35 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 8
+
+	)
+
+37 #ià
+defšed
+(
+ş_khr_å64
+)
+
+38 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+39 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+40 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+44 
+	tDATA_TYPE
+;
+
+46 
+	g¡r_‹mp
+[1024];
+
+48 
+DATA_TYPE
+ 
+	gacc
+;
+
+50 
+DATA_TYPE
+ 
+	gALPHA
+ = 1;
+
+51 
+DATA_TYPE
+ 
+	gBETA
+ = 1;
+
+53 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+54 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+55 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+56 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+57 
+ş_št
+ 
+	g”rcode
+;
+
+58 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+59 
+ş_k”Ãl
+ 
+	gşK”Ãl1
+;
+
+60 
+ş_k”Ãl
+ 
+	gşK”Ãl2
+;
+
+61 
+ş_k”Ãl
+ 
+	gşK”Ãl3
+;
+
+62 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+63 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+65 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+66 
+ş_mem
+ 
+	gb_mem_obj
+;
+
+67 
+ş_mem
+ 
+	gc_mem_obj
+;
+
+69 
+FILE
+ *
+	gå
+;
+
+70 *
+	gsourû_¡r
+;
+
+71 
+size_t
+ 
+	gsourû_size
+;
+
+75 
+	$com·»ResuÉs
+(
+DATA_TYPE
+ *
+C
+, DATA_TYPE *
+C_ouutFromGpu
+)
+
+77 
+i
+,
+j
+,
+ç
+;
+
+78 
+ç
+ = 0;
+
+81 
+i
+=0; i<
+N
+; i++)
+
+83 
+j
+=0; j<
+N
+; j++)
+
+85 ià(
+	`³rûÁDiff
+(
+C
+[
+i
+*
+N
+ + 
+j
+], 
+C_ouutFromGpu
+[i*N + j]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+87 
+ç
+++;
+
+93 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+95 
+	}
+}
+
+98 
+	$»ad_ş_fe
+()
+
+101 
+å
+ = 
+	`fİ’
+("syr2k.cl", "r");
+
+102 ià(!
+å
+) {
+
+103 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+104 
+	`ex™
+(1);
+
+106 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+107 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+108 
+	`fşo£
+Ğ
+å
+ );
+
+109 
+	}
+}
+
+112 
+	$š™_¬¿ys
+(
+DATA_TYPE
+ *
+A
+, DATA_TYPE *
+B
+, DATA_TYPE *
+C
+)
+
+114 
+i
+, 
+j
+;
+
+116 
+i
+ = 0; i < 
+N
+; i++)
+
+118 
+j
+ = 0; j < 
+N
+; j++)
+
+120 
+C
+[
+i
+*
+N
+ + 
+j
+] = ((
+DATA_TYPE
+) i*j + 2) / N;
+
+123 
+j
+ = 0; j < 
+M
+; j++)
+
+125 
+A
+[
+i
+*
+N
+ + 
+j
+] = ((
+DATA_TYPE
+) i*j) / N;
+
+126 
+B
+[
+i
+*
+N
+ + 
+j
+] = ((
+DATA_TYPE
+) i*j + 1) / N;
+
+129 
+	}
+}
+
+132 
+	$ş_š™Ÿliz©iÚ
+()
+
+135 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+136 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+137 
+	`´štf
+("Error getting…latform IDs\n");
+
+139 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+140 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+141 
+	`´štf
+("Error getting…latform‚ame\n");
+
+143 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+144 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+145 
+	`´štf
+("Error getting…latform version\n");
+
+147 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+148 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+149 
+	`´štf
+("Error getting device IDs\n");
+
+151 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+152 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+153 
+	`´štf
+("Error getting device‚ame\n");
+
+156 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+157 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+160 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+161 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+162 
+	}
+}
+
+165 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+, DATA_TYPE* 
+C
+)
+
+167 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, 
+N
+*
+M
+*(
+DATA_TYPE
+), 
+NULL
+, &
+”rcode
+);
+
+168 
+b_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, 
+N
+*
+M
+*(
+DATA_TYPE
+), 
+NULL
+, &
+”rcode
+);
+
+169 
+c_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, 
+N
+*
+M
+*(
+DATA_TYPE
+), 
+NULL
+, &
+”rcode
+);
+
+171 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+173 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, 
+N
+*
+M
+*(
+DATA_TYPE
+), 
+A
+, 0, 
+NULL
+, NULL);
+
+174 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+b_mem_obj
+, 
+CL_TRUE
+, 0, 
+N
+*
+M
+*(
+DATA_TYPE
+), 
+B
+, 0, 
+NULL
+, NULL);
+
+175 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+c_mem_obj
+, 
+CL_TRUE
+, 0, 
+N
+*
+M
+*(
+DATA_TYPE
+), 
+C
+, 0, 
+NULL
+, NULL);
+
+176 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+177 
+	}
+}
+
+180 
+	$ş_lßd_´og
+()
+
+183 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+185 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+188 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+189 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+192 
+şK”Ãl1
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "syr2k_k”Ãl", &
+”rcode
+);
+
+193 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel1\n");
+
+194 
+	`şFšish
+(
+şCommªdQue
+);
+
+195 
+	}
+}
+
+198 
+	$ş_Ïunch_k”Ãl
+()
+
+200 
+t_¡¬t
+, 
+t_’d
+;
+
+202 
+m
+ = 
+M
+;
+
+203 
+n
+ = 
+N
+;
+
+205 
+DATA_TYPE
+ 
+®pha
+ = 
+ALPHA
+;
+
+206 
+DATA_TYPE
+ 
+b‘a
+ = 
+BETA
+;
+
+208 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+209 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+210 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+211 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+N
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+212 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+M
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+214 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+217 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+218 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 1, (
+ş_mem
+), (*)&
+b_mem_obj
+);
+
+219 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 2, (
+ş_mem
+), (*)&
+c_mem_obj
+);
+
+220 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 3, (
+DATA_TYPE
+), (*)&
+ALPHA
+);
+
+221 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 4, (
+DATA_TYPE
+), (*)&
+BETA
+);
+
+222 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 5, (), (*)&
+m
+);
+
+223 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 6, (), (*)&
+n
+);
+
+225 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in setting‡rguments1\n");
+
+228 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl1
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+229 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel1\n");
+
+230 
+	`şFšish
+(
+şCommªdQue
+);
+
+232 
+t_’d
+ = 
+	`¹şock
+();
+
+233 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+234 
+	}
+}
+
+236 
+	$ş_ş—n_up
+()
+
+239 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+240 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+241 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl1
+);
+
+242 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+243 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+244 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+c_mem_obj
+);
+
+245 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+246 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+247 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+248 
+	}
+}
+
+251 
+	$syr2k
+(
+DATA_TYPE
+ *
+A
+, DATA_TYPE *
+B
+, DATA_TYPE *
+C
+)
+
+253 
+i
+, 
+j
+, 
+k
+;
+
+255 
+i
+ = 0; i < 
+N
+; i++)
+
+257 
+j
+ = 0; j < 
+N
+; j++)
+
+259 
+C
+[
+i
+*
+N
+ + 
+j
+] *ğ
+BETA
+;
+
+263 
+i
+ = 0; i < 
+N
+; i++)
+
+265 
+j
+ = 0; j < 
+N
+; j++)
+
+267 
+k
+ = 0; k < 
+M
+; k++)
+
+269 
+C
+[
+i
+*
+N
+ + 
+j
+] +ğ
+ALPHA
+ * 
+A
+[i*
+M
+ + 
+k
+] * 
+B
+[j*M + k];
+
+270 
+C
+[
+i
+*
+N
+ + 
+j
+] +ğ
+ALPHA
+ * 
+B
+[i*
+M
+ + 
+k
+] * 
+A
+[j*M + k];
+
+274 
+	}
+}
+
+277 
+	$maš
+()
+
+279 
+t_¡¬t
+, 
+t_’d
+;
+
+281 
+DATA_TYPE
+* 
+A
+;
+
+282 
+DATA_TYPE
+* 
+B
+;
+
+283 
+DATA_TYPE
+* 
+C
+;
+
+284 
+DATA_TYPE
+* 
+C_ouutFromGpu
+;
+
+286 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*
+M
+*(DATA_TYPE));
+
+287 
+B
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*
+M
+*(DATA_TYPE));
+
+288 
+C
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*
+M
+*(DATA_TYPE));
+
+289 
+C_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*
+M
+*(DATA_TYPE));
+
+291 
+	`š™_¬¿ys
+(
+A
+, 
+B
+, 
+C
+);
+
+292 
+	`»ad_ş_fe
+();
+
+293 
+	`ş_š™Ÿliz©iÚ
+();
+
+294 
+	`ş_mem_š™
+(
+A
+, 
+B
+, 
+C
+);
+
+295 
+	`ş_lßd_´og
+();
+
+297 
+	`ş_Ïunch_k”Ãl
+();
+
+299 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+c_mem_obj
+, 
+CL_TRUE
+, 0, 
+N
+*
+M
+*(
+DATA_TYPE
+), 
+C_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+300 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+302 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+303 
+	`syr2k
+(
+A
+, 
+B
+, 
+C
+);
+
+304 
+t_’d
+ = 
+	`¹şock
+();
+
+305 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+306 
+	`com·»ResuÉs
+(
+C
+, 
+C_ouutFromGpu
+);
+
+307 
+	`ş_ş—n_up
+();
+
+309 
+	`ä“
+(
+A
+);
+
+310 
+	`ä“
+(
+B
+);
+
+311 
+	`ä“
+(
+C
+);
+
+312 
+	`ä“
+(
+C_ouutFromGpu
+);
+
+315 
+	}
+}
+
+	@SYRK/syrk.c
+
+10 
+	~<¡dio.h
+>
+
+11 
+	~<¡dlib.h
+>
+
+12 
+	~<time.h
+>
+
+13 
+	~<sys/time.h
+>
+
+14 
+	~<m©h.h
+>
+
+16 #ifdeà
+__APPLE__
+
+
+17 
+	~<O³nCL/İ’ş.h
+>
+
+19 
+	~<CL/ş.h
+>
+
+22 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+25 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 1.05
+
+	)
+
+27 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+30 
+	#N
+ 1024
+
+	)
+
+31 
+	#M
+ 1024
+
+	)
+
+34 
+	#DIM_LOCAL_WORK_GROUP_X
+ 32
+
+	)
+
+35 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 8
+
+	)
+
+37 #ià
+defšed
+(
+ş_khr_å64
+)
+
+38 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+39 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+40 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+44 
+	tDATA_TYPE
+;
+
+46 
+	g¡r_‹mp
+[1024];
+
+48 
+DATA_TYPE
+ 
+	gacc
+;
+
+50 
+DATA_TYPE
+ 
+	g®pha
+ = 123;
+
+51 
+DATA_TYPE
+ 
+	gb‘a
+ = 14512;
+
+53 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+54 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+55 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+56 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+57 
+ş_št
+ 
+	g”rcode
+;
+
+58 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+59 
+ş_k”Ãl
+ 
+	gşK”Ãl1
+;
+
+60 
+ş_k”Ãl
+ 
+	gşK”Ãl2
+;
+
+61 
+ş_k”Ãl
+ 
+	gşK”Ãl3
+;
+
+62 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+63 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+65 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+66 
+ş_mem
+ 
+	gc_mem_obj
+;
+
+68 
+FILE
+ *
+	gå
+;
+
+69 *
+	gsourû_¡r
+;
+
+70 
+size_t
+ 
+	gsourû_size
+;
+
+74 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+C
+, DATA_TYPE* 
+C_ouutFromGpu
+)
+
+76 
+i
+,
+j
+,
+ç
+;
+
+77 
+ç
+ = 0;
+
+80 
+i
+=0; i<
+N
+; i++)
+
+82 
+j
+=0; j<
+M
+; j++)
+
+84 ià(
+	`³rûÁDiff
+(
+C
+[
+i
+*
+M
+ + 
+j
+], 
+C_ouutFromGpu
+[i*M + j]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+86 
+ç
+++;
+
+92 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+94 
+	}
+}
+
+97 
+	$»ad_ş_fe
+()
+
+100 
+å
+ = 
+	`fİ’
+("syrk.cl", "r");
+
+101 ià(!
+å
+) {
+
+102 
+	`årštf
+(
+¡d”r
+, "Failedo†oad kernel.\n");
+
+103 
+	`ex™
+(1);
+
+105 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+106 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+107 
+	`fşo£
+Ğ
+å
+ );
+
+108 
+	}
+}
+
+111 
+	$š™_¬¿ys
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+C
+)
+
+113 
+i
+, 
+j
+;
+
+115 
+i
+ = 0; i < 
+N
+; i++)
+
+117 
+j
+ = 0; j < 
+M
+; j++)
+
+119 
+A
+[
+i
+*
+M
+ + 
+j
+] = ((
+DATA_TYPE
+èi*jè/ 
+N
+;
+
+122 
+j
+ = 0; j < 
+N
+; j++)
+
+124 
+C
+[
+i
+*
+M
+ + 
+j
+] = ((
+DATA_TYPE
+èi*j + 2è/ 
+N
+;
+
+127 
+	}
+}
+
+130 
+	$ş_š™Ÿliz©iÚ
+()
+
+133 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+134 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+135 
+	`´štf
+("Error getting…latform IDs\n");
+
+137 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+138 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+139 
+	`´štf
+("Error getting…latform‚ame\n");
+
+141 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+142 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+143 
+	`´štf
+("Error getting…latform version\n");
+
+145 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+146 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+147 
+	`´štf
+("Error getting device IDs\n");
+
+149 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+150 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+151 
+	`´štf
+("Error getting device‚ame\n");
+
+154 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+155 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+158 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+159 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+160 
+	}
+}
+
+163 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+C
+)
+
+165 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+ * 
+M
+, 
+NULL
+, &
+”rcode
+);
+
+166 
+c_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+N
+ * 
+M
+, 
+NULL
+, &
+”rcode
+);
+
+168 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+170 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+ * 
+M
+, 
+A
+, 0, 
+NULL
+, NULL);
+
+171 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+c_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+N
+ * 
+M
+, 
+C
+, 0, 
+NULL
+, NULL);
+
+172 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+173 
+	}
+}
+
+176 
+	$ş_lßd_´og
+()
+
+179 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+181 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+184 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+185 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+188 
+şK”Ãl1
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "syrk_k”Ãl", &
+”rcode
+);
+
+189 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel1\n");
+
+190 
+	`şFšish
+(
+şCommªdQue
+);
+
+191 
+	}
+}
+
+194 
+	$ş_Ïunch_k”Ãl
+()
+
+196 
+t_¡¬t
+, 
+t_’d
+;
+
+198 
+m
+ = 
+M
+;
+
+199 
+n
+ = 
+N
+;
+
+201 
+size_t
+ 
+loÿlWÜkSize
+[2], 
+glob®WÜkSize
+[2];
+
+202 
+loÿlWÜkSize
+[0] = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+203 
+loÿlWÜkSize
+[1] = 
+DIM_LOCAL_WORK_GROUP_Y
+;
+
+204 
+glob®WÜkSize
+[0] = (
+size_t
+)
+	`û
+((()
+N
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+205 
+glob®WÜkSize
+[1] = (
+size_t
+)
+	`û
+((()
+M
+è/ (()
+DIM_LOCAL_WORK_GROUP_Y
+)) * DIM_LOCAL_WORK_GROUP_Y;
+
+207 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+210 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+211 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 1, (
+ş_mem
+), (*)&
+c_mem_obj
+);
+
+212 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 2, (
+DATA_TYPE
+), (*)&
+®pha
+);
+
+213 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 3, (
+DATA_TYPE
+), (*)&
+b‘a
+);
+
+214 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 4, (), (*)&
+m
+);
+
+215 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl1
+, 5, (), (*)&
+n
+);
+
+217 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments1\n");
+
+220 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl1
+, 2, 
+NULL
+, 
+glob®WÜkSize
+, 
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+221 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel1\n");
+
+222 
+	`şFšish
+(
+şCommªdQue
+);
+
+224 
+t_’d
+ = 
+	`¹şock
+();
+
+225 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+226 
+	}
+}
+
+229 
+	$ş_ş—n_up
+()
+
+232 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+233 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+234 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl1
+);
+
+235 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+236 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+237 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+c_mem_obj
+);
+
+238 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+239 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+240 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+241 
+	}
+}
+
+244 
+	$syrk
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+C
+)
+
+246 
+i
+, 
+j
+, 
+k
+;
+
+249 
+i
+ = 0; i < 
+N
+; i++)
+
+251 
+j
+ = 0; j < 
+N
+; j++)
+
+253 
+C
+[
+i
+*
+M
+ + 
+j
+] *ğ
+b‘a
+;
+
+257 
+i
+ = 0; i < 
+N
+; i++)
+
+259 
+j
+ = 0; j < 
+N
+; j++)
+
+261 
+k
+ = 0; k < 
+M
+; k++)
+
+263 
+C
+[
+i
+*
+N
+ + 
+j
+] +ğ
+®pha
+ * 
+A
+[i*
+M
+ + 
+k
+] * A[j*M + k];
+
+267 
+	}
+}
+
+270 
+	$maš
+()
+
+272 
+t_¡¬t
+, 
+t_’d
+;
+
+274 
+DATA_TYPE
+* 
+A
+;
+
+275 
+DATA_TYPE
+* 
+C
+;
+
+276 
+DATA_TYPE
+* 
+C_ouutFromGpu
+;
+
+278 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*
+M
+*(DATA_TYPE));
+
+279 
+C
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*
+M
+*(DATA_TYPE));
+
+280 
+C_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+N
+*
+M
+*(DATA_TYPE));
+
+282 
+	`š™_¬¿ys
+(
+A
+, 
+C
+);
+
+283 
+	`»ad_ş_fe
+();
+
+284 
+	`ş_š™Ÿliz©iÚ
+();
+
+285 
+	`ş_mem_š™
+(
+A
+, 
+C
+);
+
+286 
+	`ş_lßd_´og
+();
+
+288 
+	`ş_Ïunch_k”Ãl
+();
+
+290 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+c_mem_obj
+, 
+CL_TRUE
+, 0, 
+M
+ * 
+N
+ * (
+DATA_TYPE
+), 
+C_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+291 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+293 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+294 
+	`syrk
+(
+A
+, 
+C
+);
+
+295 
+t_’d
+ = 
+	`¹şock
+();
+
+296 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+297 
+	`com·»ResuÉs
+(
+C
+, 
+C_ouutFromGpu
+);
+
+298 
+	`ş_ş—n_up
+();
+
+300 
+	`ä“
+(
+A
+);
+
+301 
+	`ä“
+(
+C
+);
+
+302 
+	`ä“
+(
+C_ouutFromGpu
+);
+
+305 
+	}
+}
+
+	@VECADD/VectorAdd.c
+
+13 
+	~<¡dio.h
+>
+
+14 
+	~<¡dlib.h
+>
+
+15 
+	~<time.h
+>
+
+16 
+	~<sys/time.h
+>
+
+17 
+	~<m©h.h
+>
+
+19 #ifdeà
+__APPLE__
+
+
+20 
+	~<O³nCL/İ’ş.h
+>
+
+22 
+	~<CL/ş.h
+>
+
+25 
+	~"../../commÚ/pŞyb’chUtFunùs.h
+"
+
+28 
+	#PERCENT_DIFF_ERROR_THRESHOLD
+ 1.05
+
+	)
+
+30 
+	#MAX_SOURCE_SIZE
+ (0x100000)
+
+	)
+
+33 
+	#NI
+ 4096
+
+	)
+
+36 
+	#DIM_LOCAL_WORK_GROUP_X
+ 32
+
+	)
+
+37 
+	#DIM_LOCAL_WORK_GROUP_Y
+ 8
+
+	)
+
+39 #ià
+defšed
+(
+ş_khr_å64
+)
+
+40 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_khr_å64
+ : 
+’abË
+
+
+41 #–ià
+defšed
+(
+ş_amd_å64
+)
+
+42 #´agm¨
+OPENCL
+ 
+EXTENSION
+ 
+ş_amd_å64
+ : 
+’abË
+
+
+46 
+	tDATA_TYPE
+;
+
+49 
+	g¡r_‹mp
+[1024];
+
+51 
+ş_¶©fÜm_id
+ 
+	g¶©fÜm_id
+;
+
+52 
+ş_deviû_id
+ 
+	gdeviû_id
+;
+
+53 
+ş_ušt
+ 
+	gnum_deviûs
+;
+
+54 
+ş_ušt
+ 
+	gnum_¶©fÜms
+;
+
+55 
+ş_št
+ 
+	g”rcode
+;
+
+56 
+ş_cÚ‹xt
+ 
+	gşGPUCÚ‹xt
+;
+
+57 
+ş_k”Ãl
+ 
+	gşK”Ãl
+;
+
+58 
+ş_commªd_queue
+ 
+	gşCommªdQue
+;
+
+59 
+ş_´og¿m
+ 
+	gşProg¿m
+;
+
+60 
+ş_mem
+ 
+	ga_mem_obj
+;
+
+61 
+ş_mem
+ 
+	gb_mem_obj
+;
+
+62 
+ş_mem
+ 
+	gc_mem_obj
+;
+
+63 
+FILE
+ *
+	gå
+;
+
+64 *
+	gsourû_¡r
+;
+
+65 
+size_t
+ 
+	gsourû_size
+;
+
+69 
+	$com·»ResuÉs
+(
+DATA_TYPE
+* 
+C
+, DATA_TYPE* 
+C_ouutFromGpu
+)
+
+71 
+i
+, 
+j
+, 
+ç
+;
+
+72 
+ç
+ = 0;
+
+75 
+i
+=0; i < 
+NI
+; i++)
+
+77 ià(
+	`³rûÁDiff
+(
+C
+[
+i
+], 
+C_ouutFromGpu
+[i]è> 
+PERCENT_DIFF_ERROR_THRESHOLD
+)
+
+79 
+ç
+++;
+
+84 
+	`´štf
+("NÚ-M©chšg CPU-GPU Ouut BeyÚd E¼Ü Th»shŞd oà%4.2àP”ûÁ: %d\n", 
+PERCENT_DIFF_ERROR_THRESHOLD
+, 
+ç
+);
+
+86 
+	}
+}
+
+89 
+	$»ad_ş_fe
+()
+
+92 
+å
+ = 
+	`fİ’
+("VectorAdd.cl", "r");
+
+93 ià(!
+å
+) {
+
+94 
+	`årštf
+(
+¡dout
+, "Failedo†oad kernel.\n");
+
+95 
+	`ex™
+(1);
+
+97 
+sourû_¡r
+ = (*)
+	`m®loc
+(
+MAX_SOURCE_SIZE
+);
+
+98 
+sourû_size
+ = 
+	`ä—d
+Ğ
+sourû_¡r
+, 1, 
+MAX_SOURCE_SIZE
+, 
+å
+);
+
+99 
+	`fşo£
+Ğ
+å
+ );
+
+100 
+	}
+}
+
+103 
+	$š™
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+)
+
+105 
+i
+, 
+j
+;
+
+107 
+i
+ = 0; i < 
+NI
+; i++)
+
+109 
+A
+[
+i
+] = (
+DATA_TYPE
+)
+	`¿nd
+()/
+RAND_MAX
+;
+
+110 
+B
+[
+i
+] = (
+DATA_TYPE
+)
+	`¿nd
+()/
+RAND_MAX
+;
+
+114 
+	}
+}
+
+117 
+	$ş_š™Ÿliz©iÚ
+()
+
+121 
+”rcode
+ = 
+	`şG‘PÏtfÜmIDs
+(1, &
+¶©fÜm_id
+, &
+num_¶©fÜms
+);
+
+122 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oà¶©fÜm i %d\n",
+num_¶©fÜms
+);
+
+123 
+	`´štf
+("Error getting…latform IDs\n");
+
+125 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+,
+CL_PLATFORM_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+126 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm‚ami %s\n",
+¡r_‹mp
+);
+
+127 
+	`´štf
+("Error getting…latform‚ame\n");
+
+129 
+”rcode
+ = 
+	`şG‘PÏtfÜmInfo
+(
+¶©fÜm_id
+, 
+CL_PLATFORM_VERSION
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+130 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("¶©fÜm v”siÚ i %s\n",
+¡r_‹mp
+);
+
+131 
+	`´štf
+("Error getting…latform version\n");
+
+133 
+”rcode
+ = 
+	`şG‘DeviûIDs
+Ğ
+¶©fÜm_id
+, 
+CL_DEVICE_TYPE_GPU
+, 1, &
+deviû_id
+, &
+num_deviûs
+);
+
+134 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("numb” oàdeviû i %d\n", 
+num_deviûs
+);
+
+135 
+	`´štf
+("Error getting device IDs\n");
+
+137 
+”rcode
+ = 
+	`şG‘DeviûInfo
+(
+deviû_id
+,
+CL_DEVICE_NAME
+, (
+¡r_‹mp
+), sŒ_‹mp,
+NULL
+);
+
+138 if(
+”rcode
+ =ğ
+CL_SUCCESS
+è
+	`´štf
+("deviû‚ami %s\n",
+¡r_‹mp
+);
+
+139 
+	`´štf
+("Error getting device‚ame\n");
+
+142 
+şGPUCÚ‹xt
+ = 
+	`şC»©eCÚ‹xt
+Ğ
+NULL
+, 1, &
+deviû_id
+, NULL, NULL, &
+”rcode
+);
+
+143 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating context\n");
+
+146 
+şCommªdQue
+ = 
+	`şC»©eCommªdQueue
+(
+şGPUCÚ‹xt
+, 
+deviû_id
+, 0, &
+”rcode
+);
+
+147 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating command queue\n");
+
+148 
+	}
+}
+
+151 
+	$ş_mem_š™
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+, DATA_TYPE* 
+C
+)
+
+153 
+a_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_ONLY
+, (
+DATA_TYPE
+è* 
+NI
+, 
+NULL
+, &
+”rcode
+);
+
+154 
+b_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NI
+, 
+NULL
+, &
+”rcode
+);
+
+155 
+c_mem_obj
+ = 
+	`şC»©eBufãr
+(
+şGPUCÚ‹xt
+, 
+CL_MEM_READ_WRITE
+, (
+DATA_TYPE
+è* 
+NI
+, 
+NULL
+, &
+”rcode
+);
+
+157 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating buffers\n");
+
+159 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+a_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+, 
+A
+, 0, 
+NULL
+, NULL);
+
+160 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+b_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+, 
+B
+, 0, 
+NULL
+, NULL);
+
+161 
+”rcode
+ = 
+	`şEnqueueWr™eBufãr
+(
+şCommªdQue
+, 
+c_mem_obj
+, 
+CL_TRUE
+, 0, (
+DATA_TYPE
+è* 
+NI
+, 
+C
+, 0, 
+NULL
+, NULL);
+
+162 if(
+”rcode
+ !ğ
+CL_SUCCESS
+)
+	`´štf
+("Error in writing buffers\n");
+
+163 
+	}
+}
+
+166 
+	$ş_lßd_´og
+()
+
+169 
+şProg¿m
+ = 
+	`şC»©eProg¿mW™hSourû
+(
+şGPUCÚ‹xt
+, 1, (cÚ¡ **)&
+sourû_¡r
+, (cÚ¡ 
+size_t
+ *)&
+sourû_size
+, &
+”rcode
+);
+
+171 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating…rogram\n");
+
+174 
+”rcode
+ = 
+	`şBudProg¿m
+(
+şProg¿m
+, 1, &
+deviû_id
+, 
+NULL
+, NULL, NULL);
+
+175 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in building…rogram\n");
+
+176 
+	`´štf
+("%d\n", 
+”rcode
+);
+
+179 
+şK”Ãl
+ = 
+	`şC»©eK”Ãl
+(
+şProg¿m
+, "VeùÜAdd_k”Ãl", &
+”rcode
+);
+
+180 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in creating kernel\n");
+
+181 
+	`şFšish
+(
+şCommªdQue
+);
+
+182 
+	}
+}
+
+185 
+	$ş_Ïunch_k”Ãl
+()
+
+187 
+t_¡¬t
+, 
+t_’d
+;
+
+188 
+ni
+ = 
+NI
+;
+
+190 
+size_t
+ 
+loÿlWÜkSize
+, 
+glob®WÜkSize
+;
+
+191 
+loÿlWÜkSize
+ = 
+DIM_LOCAL_WORK_GROUP_X
+;
+
+192 
+glob®WÜkSize
+ = (
+size_t
+)
+	`û
+((()
+NI
+è/ (()
+DIM_LOCAL_WORK_GROUP_X
+)) * DIM_LOCAL_WORK_GROUP_X;
+
+194 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+197 
+”rcode
+ = 
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 0, (
+ş_mem
+), (*)&
+a_mem_obj
+);
+
+198 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 1, (
+ş_mem
+), (*)&
+b_mem_obj
+);
+
+199 
+”rcode
+ |ğ
+	`şS‘K”ÃlArg
+(
+şK”Ãl
+, 2, (
+ş_mem
+), (*)&
+c_mem_obj
+);
+
+201 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in seting‡rguments\n");
+
+203 
+”rcode
+ = 
+	`şEnqueueNDRªgeK”Ãl
+(
+şCommªdQue
+, 
+şK”Ãl
+, 2, 
+NULL
+, &
+glob®WÜkSize
+, &
+loÿlWÜkSize
+, 0, NULL, NULL);
+
+205 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in†aunching kernel\n");
+
+206 
+	`şFšish
+(
+şCommªdQue
+);
+
+207 
+t_’d
+ = 
+	`¹şock
+();
+
+208 
+	`årštf
+(
+¡dout
+, "GPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+209 
+	}
+}
+
+211 
+	$ş_ş—n_up
+()
+
+214 
+”rcode
+ = 
+	`şFlush
+(
+şCommªdQue
+);
+
+215 
+”rcode
+ = 
+	`şFšish
+(
+şCommªdQue
+);
+
+216 
+”rcode
+ = 
+	`şR–—£K”Ãl
+(
+şK”Ãl
+);
+
+217 
+”rcode
+ = 
+	`şR–—£Prog¿m
+(
+şProg¿m
+);
+
+218 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+a_mem_obj
+);
+
+219 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+b_mem_obj
+);
+
+220 
+”rcode
+ = 
+	`şR–—£MemObjeù
+(
+c_mem_obj
+);
+
+221 
+”rcode
+ = 
+	`şR–—£CommªdQueue
+(
+şCommªdQue
+);
+
+222 
+”rcode
+ = 
+	`şR–—£CÚ‹xt
+(
+şGPUCÚ‹xt
+);
+
+223 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in cleanup\n");
+
+224 
+	}
+}
+
+226 
+	$cÚv2D
+(
+DATA_TYPE
+* 
+A
+, DATA_TYPE* 
+B
+, DATA_TYPE* 
+C
+)
+
+228 
+i
+ = 0; i < 
+NI
+; i++)
+
+229 
+C
+[
+i
+] = 
+A
+[i] + 
+B
+[i];
+
+230 
+	}
+}
+
+233 
+	$maš
+(
+¬gc
+, *
+¬gv
+[])
+
+235 
+t_¡¬t
+, 
+t_’d
+;
+
+236 
+i
+;
+
+238 
+DATA_TYPE
+* 
+A
+;
+
+239 
+DATA_TYPE
+* 
+B
+;
+
+240 
+DATA_TYPE
+* 
+C
+;
+
+241 
+DATA_TYPE
+* 
+C_ouutFromGpu
+;
+
+243 
+A
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*(DATA_TYPE));
+
+244 
+B
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*(DATA_TYPE));
+
+245 
+C
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*(DATA_TYPE));
+
+246 
+C_ouutFromGpu
+ = (
+DATA_TYPE
+*)
+	`m®loc
+(
+NI
+*(DATA_TYPE));
+
+248 
+	`š™
+(
+A
+, 
+B
+);
+
+250 
+	`»ad_ş_fe
+();
+
+251 
+	`ş_š™Ÿliz©iÚ
+();
+
+252 
+	`ş_mem_š™
+(
+A
+, 
+B
+, 
+C
+);
+
+253 
+	`ş_lßd_´og
+();
+
+255 
+	`ş_Ïunch_k”Ãl
+();
+
+257 
+”rcode
+ = 
+	`şEnqueueR—dBufãr
+(
+şCommªdQue
+, 
+c_mem_obj
+, 
+CL_TRUE
+, 0, 
+NI
+*(
+DATA_TYPE
+), 
+C_ouutFromGpu
+, 0, 
+NULL
+, NULL);
+
+258 if(
+”rcode
+ !ğ
+CL_SUCCESS
+è
+	`´štf
+("Error in„eading GPU mem\n");
+
+260 
+t_¡¬t
+ = 
+	`¹şock
+();
+
+261 
+	`cÚv2D
+(
+A
+, 
+B
+, 
+C
+);
+
+262 
+t_’d
+ = 
+	`¹şock
+();
+
+263 
+	`årštf
+(
+¡dout
+, "CPU RuÁime: %0.6lfs\n", 
+t_’d
+ - 
+t_¡¬t
+);
+
+264 
+	`com·»ResuÉs
+(
+C
+, 
+C_ouutFromGpu
+);
+
+266 
+	`ä“
+(
+A
+);
+
+267 
+	`ä“
+(
+B
+);
+
+268 
+	`ä“
+(
+C
+);
+
+269 
+	`ä“
+(
+C_ouutFromGpu
+);
+
+271 
+	`ş_ş—n_up
+();
+
+273 
+	}
+}
+
+	@
+1
+.
+0
+16
+253
+2DCONV/2DConvolution.c
+2MM/2mm.c
+3DCONV/3DConvolution.c
+3MM/3mm.c
+ATAX/atax.c
+BICG/bicg.c
+CORR/correlation.c
+COVAR/covariance.c
+FDTD-2D/fdtd2d.c
+GEMM/gemm.c
+GESUMMV/gesummv.c
+GRAMSCHM/gramschmidt.c
+MVT/mvt.c
+SYR2K/syr2k.c
+SYRK/syrk.c
+VECADD/VectorAdd.c

@@ -1,0 +1,1 @@
+/usr/local/llvm/bin/clang++ -std=c++11 -g -o insert_printf insert_printf.cpp $(/usr/local/llvm/bin/llvm-config --libs mcjit x86 --system-libs)

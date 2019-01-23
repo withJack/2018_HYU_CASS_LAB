@@ -1,0 +1,5 @@
+source make_command
+clang -c -emit-llvm -o test.bc test.c
+./saver test.bc
+clang -o test test.updated.bc
+./test
