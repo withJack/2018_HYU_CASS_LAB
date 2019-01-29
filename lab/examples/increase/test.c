@@ -5,7 +5,7 @@ int main(void)
 	int x = 2;
 	printf("Hello world\n");
 
-	if(x == 2)
+	if(x == 3)
 	{
 		//many instructions are here, but not executed
 		printf("x is 2\n");
