@@ -1,7 +1,7 @@
-# 2018_HYU_CASS_LAB  
+# 2018_fall undergraduate research intern works
 ##### Hanyang University 
 ##### Compiler Architecture and System SW Lab.
-##### prof. Park yong Jun (박영준)
+##### Advisor: prof. Park yong Jun (박영준)
 ---------
-### First project - Vector Addition
-AKA "let's get familiar with OpenCL!"
+### Project - Vector Addition
+AKA "let's get familiar with OpenCL and LLVM (C++)!!"
